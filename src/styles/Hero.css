@@ -5,8 +5,10 @@
 #hero {
   width: 100%;
   padding: 8rem 1rem 4rem;
-  border: 0.5px solid whitesmoke;
-  border-radius: 10px;
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
 }
 
 .hero-container {

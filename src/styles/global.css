@@ -1,4 +1,6 @@
-/* RESET */
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -9,40 +11,65 @@ html {
   scroll-behavior: smooth;
 }
 
-/* THEME VARIABLES */
+/* =========================
+   THEME VARIABLES
+========================= */
 :root {
-  --bg: #ffffff;
+  /* Core surfaces */
+  --app-bg: #f2f2f2;
+  --content-bg: #ffffff;
+  --card-bg: #ffffff;
+  --footer-bg: #f8f8f8;
+
+  /* Text */
   --text: #111111;
   --text-muted: #555555;
+
+  /* UI */
   --primary: #4f46e5;
   --border: #e5e5e5;
   --toggle-bg: #dcdcdc;
-  --card-bg: #ffffff;
-  --footer-bg: #f8f8f8;
+
+  --surface-1: #ffffff;
+  --surface-2: #f5f5f5;
+
+  /* Effects */
   --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="dark"] {
-  --bg: #000000;
-  --text: #f5f5f5;
-  --text-muted: #cccccc;
-  --border: #333333;
-  --toggle-bg: #444444;
+  /* Core surfaces */
+  --app-bg: #000000;
+  --content-bg: #242424;
   --card-bg: #161616;
   --footer-bg: #111111;
+
+  /* Text */
+  --text: #f5f5f5;
+  --text-muted: #cccccc;
+
+  /* UI */
+  --border: #333333;
+  --toggle-bg: #444444;
+  
+  --surface-1: #1a1a1a;
+  --surface-2: #222222;
+  /* Effects */
   --shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
 }
 
-/* GLOBAL TYPOGRAPHY */
+/* =========================
+   GLOBAL TYPOGRAPHY
+========================= */
 body {
-  background: white !important;
-  color: var(--text) !important;
+  background: var(--app-bg);
+  color: var(--text);
   font-family: "Poppins", sans-serif;
 }
 
-/* LAYOUT */
-
-/* BUTTONS */
+/* =========================
+   BUTTONS
+========================= */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -55,7 +82,7 @@ body {
 
 .btn-primary {
   background: var(--primary);
-  color: white;
+  color: #ffffff;
 }
 
 .btn-secondary {
@@ -63,28 +90,34 @@ body {
   color: var(--primary);
 }
 
-/* LINKS */
+/* =========================
+   LINKS
+========================= */
 a {
   text-decoration: none;
+  color: inherit;
 }
-/* Full-width app wrapper */
+
+/* =========================
+   LAYOUT
+========================= */
+
+/* App shell (left + content + right) */
 .app-shell {
   min-height: 100vh;
-  background: #000000;
+  background: var(--app-bg);
   display: grid;
   grid-template-columns: 7vw 84vw 8vw;
 }
 
-
-
 /* A4-style readable container */
 .content-container {
   grid-column: 2;
-  background: rgb(36, 36, 36);
+  background: var(--content-bg);
   padding: 0 1rem;
 }
 
-
+/* Wider screens */
 @media (min-width: 1024px) {
   .content-container {
     padding: 0 2rem;

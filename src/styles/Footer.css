@@ -1,6 +1,7 @@
 #footer {
-  padding: 3rem 1rem;
-  background: var(--footer-bg);
+  padding: 1rem 0.5rem;
+  background: var(--surface-2);
+  border-top: 1px solid var(--border);
   text-align: center;
   margin-top: 4rem;
 }

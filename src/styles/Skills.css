@@ -10,7 +10,7 @@
 }
 
 .skill-card {
-  background: var(--card-bg);
+  background: var(--surface-1);
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 1.8rem;
@@ -50,8 +50,8 @@
 .skill-card.emphasis {
   background: linear-gradient(
     180deg,
-    var(--card-bg),
-    transparent
+    var(--surface-1),
+    var(--surface-2)
   );
 }
 

@@ -1,10 +1,12 @@
 .navbar {
   position: sticky;
   top: 0;
-  width: 100%;
-  background: var(--bg);
+  width: calc(100% + 2rem);
+  background: var(--surface-1);
   z-index: 1000;
   border-bottom: 1px solid var(--border);
+  border-radius: 12px;
+  margin: 0 -1rem;
 }
 
 /* navbar follows content-container width */
@@ -13,19 +15,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 0;
+  padding: 0.75rem 0;
   position: relative;
 }
 
 #logo img {
-  width: 50px;
+  width: 30px;
 }
 
 /* ===== Desktop menu ===== */
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
   list-style: none;
   padding-left: 0;
   margin: 0;
@@ -34,11 +36,11 @@
 .nav-menu .nav-link {
   color: var(--text);
   text-decoration: none;
-  font-weight: 200;
+  font-weight: 50;
 }
 
 .nav-menu .btn {
-  padding: 0.6rem 1rem;
+  padding: 0.4rem 1rem;
 }
 
 /* ===== Theme toggle ===== */
@@ -53,19 +55,19 @@
 
 .toggle-icons {
   cursor: pointer;
-  width: 40px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   background: var(--toggle-bg);
-  border-radius: 20px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2px 4px;
+  padding: 2px 6px;
 }
 
 .toggle-icons img {
-  width: 14px;
-  height: 14px;
+  width: 10px;
+  height: 10px;
 }
 
 /* ===== Hamburger ===== */
@@ -89,8 +91,8 @@
     top: calc(100% + 4px);
     right: 0;
 
-    min-width: 220px;
-    background: var(--bg);
+    min-width: 200px;
+    background: var(--surface-1);
 
     border: 1px solid var(--border);
     border-radius: 6px;
@@ -128,14 +130,14 @@
   .nav-menu .nav-link {
     display: block;
     width: 100%;
-    padding: 0.9rem 1rem;
+    padding: 0.6rem 1rem;
     font-size: 0.7rem;
     font-weight: 300;
     color: var(--text);
   }
 
   .nav-menu .nav-link:hover {
-    background: rgba(0, 0, 0, 0.04);
+    background: var(--surface-2);
     color: var(--primary);
   }
 

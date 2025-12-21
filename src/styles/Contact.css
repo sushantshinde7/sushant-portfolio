@@ -1,12 +1,13 @@
 .contact-section {
   padding: 5rem 1rem;
+  background: transparent;
 }
 
 .contact-card {
   max-width: 520px;
   margin: 3rem auto 0;
   padding: 2rem;
-  background: var(--card-bg);
+  background: var(--surface-1);
   border: 1px solid var(--border);
   border-radius: 16px;
   text-align: center;
@@ -37,7 +38,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: var(--text-muted);
+  color: var(--primary);
   font-size: 0.95rem;
   text-decoration: none;
 }
