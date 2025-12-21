@@ -17,28 +17,31 @@
   position: relative;
 }
 
-
 #logo img {
   width: 50px;
 }
 
+/* ===== Desktop menu ===== */
 .nav-menu {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  transition: all 0.3s ease;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
 }
 
 .nav-menu .nav-link {
   color: var(--text);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 200;
 }
 
 .nav-menu .btn {
   padding: 0.6rem 1rem;
 }
 
+/* ===== Theme toggle ===== */
 .theme-switch {
   display: flex;
   align-items: center;
@@ -50,7 +53,6 @@
 
 .toggle-icons {
   cursor: pointer;
-  position: relative;
   width: 40px;
   height: 20px;
   background: var(--toggle-bg);
@@ -66,6 +68,7 @@
   height: 14px;
 }
 
+/* ===== Hamburger ===== */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -79,38 +82,65 @@
   background: var(--text);
 }
 
+/* ===== Mobile dropdown ===== */
 @media (max-width: 768px) {
   .nav-menu {
     position: absolute;
     top: calc(100% + 4px);
     right: 0;
 
-    width: max-content;
     min-width: 220px;
-
     background: var(--bg);
+
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: 6px;
     box-shadow: var(--shadow);
 
     flex-direction: column;
-    gap: 1.25rem;
-    padding: 1.25rem;
+    align-items: stretch;
 
-    /* animation setup */
+    padding: 0;
+    gap: 0;
+
+    /* animation */
     opacity: 0;
     transform: translateY(-8px);
     pointer-events: none;
-
-    transition:
-      opacity 0.2s ease,
-      transform 0.2s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease;
   }
 
   .nav-menu.active {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+  }
+
+  /* list rows */
+  .nav-menu li {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-menu li:last-child {
+    border-bottom: none;
+  }
+
+  /* full-row clickable links */
+  .nav-menu .nav-link {
+    display: block;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: var(--text);
+  }
+
+  .nav-menu .nav-link:hover {
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--primary);
+  }
+
+  [data-theme="dark"] .nav-menu .nav-link:hover {
+    background: rgba(255, 255, 255, 0.06);
   }
 
   .hamburger {

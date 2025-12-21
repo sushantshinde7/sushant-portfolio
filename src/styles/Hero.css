@@ -5,7 +5,8 @@
 #hero {
   width: 100%;
   padding: 8rem 1rem 4rem;
-  background: var(--bg);
+  border: 0.5px solid whitesmoke;
+  border-radius: 10px;
 }
 
 .hero-container {
