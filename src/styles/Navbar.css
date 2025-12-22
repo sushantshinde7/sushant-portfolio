@@ -5,7 +5,7 @@
   background: var(--surface-1);
   z-index: 1000;
   border-bottom: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 0 0 10px 10px;
   margin: 0 -1rem;
 }
 
@@ -36,11 +36,12 @@
 .nav-menu .nav-link {
   color: var(--text);
   text-decoration: none;
-  font-weight: 50;
+  font-weight: 200;
+  font-size: 0.75rem;
 }
 
 .nav-menu .btn {
-  padding: 0.4rem 1rem;
+  padding: 0.3rem 0.7rem;
 }
 
 /* ===== Theme toggle ===== */
