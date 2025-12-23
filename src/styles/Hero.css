@@ -4,11 +4,12 @@
 
 #hero {
   width: 100%;
-  padding: 8rem 1rem 4rem;
+  padding: 4rem 1rem 4rem;
   background: var(--surface-1);
   border: 1px solid var(--border);
   border-radius: 12px;
   box-shadow: var(--shadow);
+  margin-top: 10px;
 }
 
 .hero-container {
@@ -35,6 +36,7 @@
   height: 220px;
   border-radius: 50%;
   object-fit: cover;
+  border: 1px solid grey;
 }
 
 /* ========== RIGHT SIDE ========== */
