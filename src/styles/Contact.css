@@ -1,48 +1,112 @@
 .contact-section {
-  padding: 5rem 1rem;
-  background: transparent;
+  padding: 5rem 0;
 }
 
-.contact-card {
-  max-width: 520px;
-  margin: 3rem auto 0;
-  padding: 2rem;
-  background: var(--surface-1);
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1rem;
+}
+
+/* LEFT */
+.contact-form {
+  background: var(--card-bg);
   border: 1px solid var(--border);
-  border-radius: 16px;
-  text-align: center;
+  border-radius: 12px;
+  padding: 2.5rem;
 }
 
-.contact-primary {
+.contact-form h2 {
+  margin-bottom: 0.5rem;
+}
+
+.contact-subtext {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.field label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.field input,
+.field textarea {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.7rem;
+  color: var(--text);
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.response-note {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* RIGHT */
+.contact-cta {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-cta h3 {
+  margin-bottom: 1rem;
+}
+
+.contact-cta p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.direct-mail {
+  margin: 1.5rem 0;
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: 1rem;
   font-weight: 500;
-  color: var(--text);
-  text-decoration: none;
-  margin-bottom: 1.5rem;
-}
-
-.contact-primary:hover {
-  text-decoration: underline;
-}
-
-.contact-links {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.contact-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
   color: var(--primary);
-  font-size: 0.95rem;
-  text-decoration: none;
 }
 
-.contact-links a:hover {
+.cta-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
   color: var(--text);
 }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
