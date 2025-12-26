@@ -4,7 +4,7 @@ import { Mail, Github, Linkedin, FileText } from "lucide-react";
 function Contact() {
   return (
     <section id="contact" className="contact-section">
-      <div className="contact-wrapper content-container">
+      <div className="contact-wrapper ">
         {/* LEFT — FORM */}
         <div className="contact-form">
           <h2>Contact Me</h2>

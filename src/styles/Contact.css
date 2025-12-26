@@ -21,6 +21,9 @@
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 1rem;
+  background: transparent;
+  border: none;
+  padding:0 10px;
 }
 
 #contact {
