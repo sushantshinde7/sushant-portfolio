@@ -14,12 +14,17 @@ html {
 /* =========================
    THEME VARIABLES
 ========================= */
+
+/* -------- LIGHT MODE (DEFAULT) -------- */
 :root {
   /* Core surfaces */
-  --app-bg: #f2f2f2;
-  --content-bg: #ffffff;
+  --app-bg: #ffffff;            /* pure canvas */
+  --content-bg: #f7f7f8;        /* soft white */
   --card-bg: #ffffff;
-  --footer-bg: #f8f8f8;
+  --footer-bg: #f2f3f5;
+
+  /* Texture */
+  --dot-color: rgba(0, 0, 0, 0.25);
 
   /* Text */
   --text: #111111;
@@ -27,22 +32,27 @@ html {
 
   /* UI */
   --primary: #4f46e5;
-  --border: #e5e5e5;
+  --border: #e1e1e3;
   --toggle-bg: #dcdcdc;
 
+  /* Surface helpers */
   --surface-1: #ffffff;
-  --surface-2: #f5f5f5;
+  --surface-2: #f5f5f7;
 
   /* Effects */
-  --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
+/* -------- DARK MODE -------- */
 [data-theme="dark"] {
   /* Core surfaces */
   --app-bg: #000000;
   --content-bg: #242424;
   --card-bg: #161616;
   --footer-bg: #111111;
+
+  /* Texture */
+  --dot-color: rgba(255, 255, 255, 0.25);
 
   /* Text */
   --text: #f5f5f5;
@@ -51,9 +61,11 @@ html {
   /* UI */
   --border: #333333;
   --toggle-bg: #444444;
-  
+
+  /* Surface helpers */
   --surface-1: #1a1a1a;
   --surface-2: #222222;
+
   /* Effects */
   --shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
 }
@@ -102,19 +114,32 @@ a {
    LAYOUT
 ========================= */
 
-/* App shell (left + content + right) */
+/* App shell (outer canvas only) */
 .app-shell {
   min-height: 100vh;
-  background: var(--app-bg);
   display: grid;
   grid-template-columns: 7vw 84vw 8vw;
+
+  background-color: var(--app-bg);
+
+  /* Dot texture */
+  background-image: radial-gradient(
+    var(--dot-color) 1.5px,
+    transparent 1.4px
+  );
+  background-size: 20px 20px;
 }
 
-/* A4-style readable container */
+/* Main readable column */
 .content-container {
   grid-column: 2;
   background: var(--content-bg);
   padding: 0 1rem;
+
+  /* separation (critical for light mode) */
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  box-shadow: var(--shadow);
 }
 
 /* Wider screens */
@@ -123,4 +148,3 @@ a {
     padding: 0 2rem;
   }
 }
-
