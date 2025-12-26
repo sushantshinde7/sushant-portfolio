@@ -89,8 +89,8 @@ body {
 
 /* ===== Modern Thin Scrollbar ===== */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -133,6 +133,10 @@ body {
   text-decoration: none;
   font-weight: 500;
 }
+.btn:hover {
+  transform: translateY(-1px);
+  transition: transform 0.15s ease;
+}
 
 .btn-primary {
   background: var(--primary);
@@ -163,7 +167,7 @@ a {
   grid-template-columns: 7vw 86vw 7vw;
 
   background-color: var(--app-bg);
-
+  background-size: 22px 22px;
   /* Dot texture */
   background-image: radial-gradient(
     var(--dot-color) 1.5px,
@@ -181,7 +185,7 @@ a {
   /* separation (critical for light mode) */
   border-left: 1px solid var(--border);
   border-right: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.02), var(--shadow);
 }
 
 /* Wider screens */
