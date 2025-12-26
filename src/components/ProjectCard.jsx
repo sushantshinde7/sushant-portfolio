@@ -31,7 +31,7 @@ function ProjectCard({
           </div>
         </header>
 
-        <p className="project-description">{description}</p>
+        <p className="project-description" lang="en">{description}</p>
 
         <ul className="project-tags">
           {tags.map((tag, i) => (
