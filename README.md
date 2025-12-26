@@ -1,21 +1,51 @@
 # Sushant Portfolio
 
-Personal portfolio built with React and Vite.
+Personal portfolio website built using React and Vite. The project contains structured UI components and commonly used portfolio sections to present personal information, skills, and project work in a clean and organized layout. It follows a component-based structure with modular sections, centralized styling, and static assets.
 
-## Tech Stack
-- React
-- Vite
-- CSS
-- Lucide Icons
+## Included Sections
 
-## Setup
+- Hero / Introduction  
+- About  
+- Skills  
+- Projects  
+- Contact  
+- Footer  
+
+---
+
+## Tech Stack Used
+
+- React  
+- Vite  
+- CSS  
+- Lucide Icons  
+
+---
+
+## Project Structure
+
+- Component-based architecture  
+- Modular sections  
+- Centralized styling  
+- Static assets and icons  
+
+
+**Setup:**  
 ```bash
 npm install
 npm run dev
-
-Then:
+```
+**Version Control:**
 
 ```bash
 git add README.md
 git commit -m "Add README"
-git push
+git Version
+```
+
+
+
+
+
+
+
