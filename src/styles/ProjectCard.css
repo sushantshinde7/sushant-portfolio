@@ -1,38 +1,126 @@
-.card {
-  background: var(--surface-1);
+.project-card {
+  display: grid;
+  grid-template-columns: clamp(280px, 35%, 420px) 1fr;
+  gap: 2.5rem;
+
+  padding: 2.25rem;
+  margin-bottom: 2.5rem;
+
+  min-height: 260px;
+
+  background: var(--card-bg);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.5rem;
+  border-radius: 16px;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
   box-shadow: var(--shadow);
-  transition: transform 0.2s ease;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-}
 
-.project-info {
+/* LEFT — Placeholder visual */
+.project-visual {
+  position: relative;
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    var(--surface-2),
+    var(--surface-1)
+  );
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
+
+  min-height: 100%;
 }
 
-.project-bio h3 {
-  color: var(--text);
-  margin-bottom: 0.5rem;
-}
 
-.project-bio p {
+
+.visual-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: var(--text-muted);
-  font-size: 0.9rem;
 }
 
-.project-link a {
-  margin-left: 0.6rem;
-  color: var(--primary);
-  font-size: 1.3rem;
-  color: var(--text);
-  display: inline-flex;
+/* RIGHT — Content */
+.project-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-header {
+  display: flex;
   align-items: center;
-  transition: color 0.2s ease;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.project-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.project-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.project-actions a {
+  color: var(--text-muted);
+  transition: color 0.2s ease, transform 0.15s ease;
+}
+
+.project-actions a:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.project-description {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+/* Tech tags */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-tags li {
+  font-size: 0.7rem;
+  padding: 0.35rem 0.6rem;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  color: var(--text-muted);
+  background: var(--surface-1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .project-card {
+    grid-template-columns: 1fr;
+    padding: 1.75rem;
+  }
+
+  .project-visual {
+    min-height: 200px;
+  }
 }

@@ -29,7 +29,7 @@
 #contact {
   background: linear-gradient(
     180deg,
-    var(--bg) 0%,
+    transparent 0%,
     var(--footer-bg) 100%
   );
 }
