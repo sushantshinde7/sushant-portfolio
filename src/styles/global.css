@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
 /* =========================
    RESET
 ========================= */
@@ -43,6 +45,9 @@ html {
 
   /* Effects */
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  
+  /* Fonts */
+  --font-ui: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* -------- DARK MODE -------- */
