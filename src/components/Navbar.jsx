@@ -57,7 +57,7 @@ function Navbar() {
       <div className="navbar-inner">
         <h1 id="logo">
           <a href="#">
-            <img src="/assets/logo.png" alt="Logo" />
+            <img src="src/assets/favicon-32x32.png" alt="Logo" />
           </a>
         </h1>
 
