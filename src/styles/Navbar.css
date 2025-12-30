@@ -65,7 +65,12 @@
   padding: 0.3rem 0.7rem;
   margin-right: -2px;
 }
-
+/* ===== Right controls wrapper ===== */
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between toggle + hamburger */
+}
 /* ===== Theme toggle ===== */
 .theme-switch {
   display: flex;
@@ -86,7 +91,6 @@
   align-items: center;
   justify-content: space-between;
   padding: 2px 6px;
-  margin-right: 8px;
 }
 
 .toggle-icons img {
@@ -111,18 +115,27 @@
 
 /* ===== Mobile dropdown ===== */
 @media (max-width: 768px) {
+  .nav-controls {
+    margin-left: auto;     /* pushes controls to the far right */
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    gap: 10px;
+  }
+
   .nav-menu {
     position: absolute;
-    top: calc(100% + 4px);
+    top: calc(100% + 6px);
     right: 0;
 
     min-width: 200px;
     background: var(--surface-1);
 
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 8px;
     box-shadow: var(--shadow);
 
+    display: flex;
     flex-direction: column;
     align-items: stretch;
 
@@ -131,9 +144,11 @@
 
     /* animation */
     opacity: 0;
-    transform: translateY(-8px);
+    transform: translateY(-6px);
     pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
   }
 
   .nav-menu.active {
@@ -155,7 +170,7 @@
   .nav-menu .nav-link {
     display: block;
     width: 100%;
-    padding: 0.6rem 1rem;
+    padding: 0.7rem 1rem;
     font-size: 0.7rem;
     font-weight: 300;
     color: var(--text);
@@ -170,15 +185,8 @@
     background: rgba(255, 255, 255, 0.06);
   }
 
+  /* hamburger visible only on mobile */
   .hamburger {
     display: flex;
-  }
-
-  .toggle-icons{
-  width: 60px;
-  height: 9px;
-  border-radius: 6px;
-  padding: 0.6rem 1rem;
-  margin: 4px 8px;
   }
 }
