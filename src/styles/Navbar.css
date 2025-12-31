@@ -71,32 +71,100 @@
   align-items: center;
   gap: 10px; /* space between toggle + hamburger */
 }
+/* ===== Framer toggle pill ===== */
+.toggle-pill {
+  position: relative;
+  width: 52px;
+  height: 22px;
+  border-radius: 999px;
+  padding: 2px;
+  cursor: pointer;
+
+ 
+}
+
 /* ===== Theme toggle ===== */
 .theme-switch {
   display: flex;
   align-items: center;
 }
 
-.theme-switch input {
-  display: none;
+/* icons inside pill */
+.toggle-icon {
+  width: 12px;
+  height: 12px;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
-.toggle-icons {
-  cursor: pointer;
-  width: 26px;
-  height: 26px;
-  background: var(--toggle-bg);
+
+[data-theme="light"] .toggle-icon.sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+[data-theme="light"] .toggle-icon.moon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.5);
+}
+
+[data-theme="dark"] .toggle-icon.moon {
+  opacity: 1;
+  transform: rotate(-180deg) scale(1);
+}
+
+[data-theme="dark"] .toggle-icon.sun {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.5);
+}
+
+/* knob */
+.toggle-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
+
+  background: var(--app-bg);
+  box-shadow: var(--shadow);
+
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 2px 6px;
+  justify-content: center;
+
+  transition:
+    left 0.35s ease,
+    transform 0.35s ease;
+
+  color: var(--text);
 }
 
-.toggle-icons img {
-  width: 10px;
-  height: 10px;
+/* dark mode knob position */
+[data-theme="light"] .toggle-knob {
+  left: 2px;
+  transform: rotate(0deg);
 }
+
+[data-theme="dark"] .toggle-knob {
+  left: 32px; /* 52 - knob(18) - padding(2*2) */
+  
+}
+
+
+/* icons wrapper */
+.toggle-icons {
+  position: absolute;
+  inset: 0;
+  align-items: center; 
+  padding: 0 6px;
+  pointer-events: none;
+}
+
 
 /* ===== Hamburger ===== */
 .hamburger {
