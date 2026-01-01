@@ -1,10 +1,15 @@
 import "../styles/Hero.css";
 import { Github, Linkedin } from "lucide-react";
 
-
 export default function Hero() {
   return (
     <section className="hero" id="home">
+      {/* Atmospheric background layers */}
+      <div className="hero-bg">
+        <div className="hero-noise" />
+        <div className="hero-atmosphere" />
+      </div>
+
       <div className="hero-inner">
         {/* Content */}
         <div className="hero-content">
@@ -12,9 +17,7 @@ export default function Hero() {
 
           <h1 className="hero-name">Sushant Shinde</h1>
 
-          <h2 className="hero-role">
-            Front-End Developer
-          </h2>
+          <h2 className="hero-role">Front-End Developer</h2>
 
           <p className="hero-description">
             I build clean, accessible, and performance-focused web interfaces,
@@ -56,15 +59,13 @@ export default function Hero() {
             </a>
           </div>
         </div>
+
         {/* Scroll indicator */}
-      <div className="scroll-indicator">
-        <span className="scroll-dot" />
-      </div>
-        {/* Abstract */}
-        <div className="hero-abstract">
-          <div className="abstract-shape" />
+        <div className="scroll-indicator">
+          <span className="scroll-dot" />
         </div>
       </div>
     </section>
   );
 }
+
