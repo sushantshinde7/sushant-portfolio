@@ -137,12 +137,12 @@ function Navbar() {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="2"
+                  strokeWidth="3"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   aria-hidden
                 >
-                  <path d="M21 12.79A9 9 0 0111.21 3a7 7 0 000 18A9 9 0 0021 12.79z" />
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3.9 5 5 0 0 0 21 11.79z" />
                 </svg>
               ) : (
                 /* Sun */
