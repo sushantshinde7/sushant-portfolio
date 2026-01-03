@@ -19,7 +19,8 @@ Personal portfolio website built using React and Vite. The project contains stru
 - Vite  
 - CSS  
 - Lucide Icons  
-
+- Framer Motion
+  
 ---
 
 ## Project Structure
