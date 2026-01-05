@@ -15,12 +15,13 @@ import {
   SiFirebase,
   SiGit,
   SiGithub,
-  SiVisualStudioCode,
+  //SiVisualStudioCode,
   SiVite,
   SiFigma,
   SiVercel,
   SiGithubpages,
 } from "react-icons/si";
+//import { FaVisualStudioCode } from "react-icons/fa6";
 
 const frontendSkills = [
   { name: "HTML", icon: SiHtml5 },
@@ -44,7 +45,7 @@ const webProgrammingSkills = [
 const toolsSkills = [
   { name: "Git", icon: SiGit },
   { name: "GitHub", icon: SiGithub },
-  { name: "VS Code", icon: SiVisualStudioCode },
+  //{ name: "VS Code", icon: FaVisualStudioCode },
   { name: "Vite", icon: SiVite },
   { name: "Figma", icon: SiFigma },
   { name: "Vercel", icon: SiVercel },
@@ -71,9 +72,18 @@ function SkillSection({ title, skills }) {
 export default function Skills() {
   return (
     <section id="skills" className="skills-wrapper container">
-      <SkillSection title="Frontend" skills={frontendSkills} />
-      <SkillSection title="Web Programming" skills={webProgrammingSkills} />
-      <SkillSection title="Tools & Deployment" skills={toolsSkills} />
+      <header className="skills-header">
+        <h2 className="section-heading">Skills</h2>
+        <p className="section-subtitle">
+          Tools and technologies I use to build modern web interfaces.
+        </p>
+      </header>
+
+      <div className="skills-sections">
+        <SkillSection title="Frontend" skills={frontendSkills} />
+        <SkillSection title="Web Programming" skills={webProgrammingSkills} />
+        <SkillSection title="Tools & Deployment" skills={toolsSkills} />
+      </div>
     </section>
   );
 }
