@@ -1,62 +1,79 @@
 import "../styles/Skills.css";
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiReact,
+  SiSass,
+  SiTailwindcss,
+  SiBootstrap,
+  SiFramer,
+  SiNodedotjs,
+  SiNpm,
+  SiPython,
+  SiMysql,
+  SiFirebase,
+  SiGit,
+  SiGithub,
+  SiVisualStudioCode,
+  SiVite,
+  SiFigma,
+  SiVercel,
+  SiGithubpages,
+} from "react-icons/si";
 
-function Skills() {
+const frontendSkills = [
+  { name: "HTML", icon: SiHtml5 },
+  { name: "CSS", icon: SiCss3 },
+  { name: "JavaScript", icon: SiJavascript },
+  { name: "React", icon: SiReact },
+  { name: "Sass", icon: SiSass },
+  { name: "Tailwind", icon: SiTailwindcss },
+  { name: "Bootstrap", icon: SiBootstrap },
+  { name: "Framer Motion", icon: SiFramer },
+];
+
+const webProgrammingSkills = [
+  { name: "Node.js", icon: SiNodedotjs },
+  { name: "npm", icon: SiNpm },
+  { name: "Python", icon: SiPython },
+  { name: "MySQL", icon: SiMysql },
+  { name: "Firebase", icon: SiFirebase },
+];
+
+const toolsSkills = [
+  { name: "Git", icon: SiGit },
+  { name: "GitHub", icon: SiGithub },
+  { name: "VS Code", icon: SiVisualStudioCode },
+  { name: "Vite", icon: SiVite },
+  { name: "Figma", icon: SiFigma },
+  { name: "Vercel", icon: SiVercel },
+  { name: "GitHub Pages", icon: SiGithubpages },
+];
+
+function SkillSection({ title, skills }) {
   return (
-    <section id="skills" className="skills-section container">
-      <div className="division"></div>
-
-      <div className="content-text">
-        <h2>Skills</h2>
-        <p>
-          A frontend-focused skillset shaped by design thinking, consistency,
-          and real-world UI decisions.
-        </p>
-      </div>
+    <div className="skills-section-block">
+      <h3 className="skills-title">{title}</h3>
 
       <div className="skills-grid">
-        {/* Focus */}
-        <div className="skill-card emphasis">
-          <h3>Frontend Focus</h3>
-          <p>
-            I build clean, responsive interfaces with attention to spacing,
-            hierarchy, and interaction. I prioritize clarity, usability, and
-            visual balance over unnecessary complexity.
-          </p>
-        </div>
-
-        {/* Core Stack */}
-        <div className="skill-card">
-          <h3>Core Stack</h3>
-          <ul>
-            <li>React & modern JavaScript</li>
-            <li>Semantic HTML & scalable CSS</li>
-            <li>Component-driven UI architecture</li>
-            <li>Design-to-code workflows</li>
-          </ul>
-        </div>
-
-        {/* Tools */}
-        <div className="skill-card">
-          <h3>Tools I Rely On</h3>
-          <ul>
-            <li>Git & GitHub for version control</li>
-            <li>VS Code for daily development</li>
-            <li>Figma for layout & design decisions</li>
-            <li>Vite, npm, and modern build tooling</li>
-          </ul>
-        </div>
-
-        {/* Growth */}
-        <div className="skill-card subtle">
-          <h3>Currently Exploring</h3>
-          <p>
-            Deepening my understanding of backend fundamentals, APIs, and
-            full-stack workflows to build more complete products.
-          </p>
-        </div>
+        {skills.map(({ name, icon: Icon }) => (
+          <div className="skill-item" key={name}>
+            <Icon className="skill-icon" />
+            <span className="skill-name">{name}</span>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 }
 
-export default Skills;
+export default function Skills() {
+  return (
+    <section id="skills" className="skills-wrapper container">
+      <SkillSection title="Frontend" skills={frontendSkills} />
+      <SkillSection title="Web Programming" skills={webProgrammingSkills} />
+      <SkillSection title="Tools & Deployment" skills={toolsSkills} />
+    </section>
+  );
+}

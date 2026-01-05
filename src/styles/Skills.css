@@ -1,62 +1,79 @@
-.skills-section {
+.skills-wrapper {
   padding: 5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
+/* Section block */
+.skills-section-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+/* Section title */
+.skills-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Grid layout */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1.6rem;
 }
 
-.skill-card {
+/* Skill item */
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem;
+  border-radius: 12px;
   background: var(--surface-1);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.8rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.skill-card:hover {
+.skill-item:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow);
 }
 
-.skill-card h3 {
-  font-size: 1.15rem;
-  margin-bottom: 0.8rem;
-  color: var(--text);
+/* Icon */
+.skill-icon {
+  font-size: 32px;
 }
 
-.skill-card p {
+/* Label */
+.skill-name {
+  font-size: 0.85rem;
   color: var(--text-muted);
-  line-height: 1.6;
-  font-size: 0.95rem;
+  text-align: center;
 }
 
-.skill-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .skills-wrapper {
+    gap: 3rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .skill-icon {
+    font-size: 28px;
+  }
 }
 
-.skill-card li {
-  color: var(--text-muted);
-  padding: 0.4rem 0;
-  font-size: 0.95rem;
-}
-
-/* Visual emphasis for identity */
-.skill-card.emphasis {
-  background: linear-gradient(
-    180deg,
-    var(--surface-1),
-    var(--surface-2)
-  );
-}
-
-/* Subtle / exploratory tone */
-.skill-card.subtle {
-  background: transparent;
-  border-style: dashed;
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
