@@ -1,4 +1,5 @@
 import "../styles/Skills.css";
+import { motion } from "framer-motion";
 import {
   SiHtml5,
   SiCss3,
@@ -15,13 +16,13 @@ import {
   SiFirebase,
   SiGit,
   SiGithub,
-  //SiVisualStudioCode,
   SiVite,
   SiFigma,
   SiVercel,
   SiGithubpages,
 } from "react-icons/si";
-//import { FaVisualStudioCode } from "react-icons/fa6";
+
+/* ---------------- data ---------------- */
 
 const frontendSkills = [
   { name: "HTML", icon: SiHtml5 },
@@ -45,16 +46,38 @@ const webProgrammingSkills = [
 const toolsSkills = [
   { name: "Git", icon: SiGit },
   { name: "GitHub", icon: SiGithub },
-  //{ name: "VS Code", icon: FaVisualStudioCode },
   { name: "Vite", icon: SiVite },
   { name: "Figma", icon: SiFigma },
   { name: "Vercel", icon: SiVercel },
   { name: "GitHub Pages", icon: SiGithubpages },
 ];
 
+/* ---------------- motion ---------------- */
+
+const sectionFade = {
+  hidden: { opacity: 0, y: 16 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: "easeOut" },
+  },
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.12 },
+  },
+};
+
+/* ---------------- components ---------------- */
+
 function SkillSection({ title, skills }) {
   return (
-    <div className="skills-section-block">
+    <motion.div
+      className="skills-section-block"
+      variants={sectionFade}
+    >
       <h3 className="skills-title">{title}</h3>
 
       <div className="skills-grid">
@@ -65,25 +88,37 @@ function SkillSection({ title, skills }) {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 export default function Skills() {
   return (
     <section id="skills" className="skills-wrapper container">
-      <header className="skills-header">
+      <motion.header
+        className="skills-header"
+        variants={sectionFade}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+      >
         <h2 className="section-heading">Skills</h2>
         <p className="section-subtitle">
           Tools and technologies I use to build modern web interfaces.
         </p>
-      </header>
+      </motion.header>
 
-      <div className="skills-sections">
+      <motion.div
+        className="skills-sections"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+      >
         <SkillSection title="Frontend" skills={frontendSkills} />
         <SkillSection title="Web Programming" skills={webProgrammingSkills} />
         <SkillSection title="Tools & Deployment" skills={toolsSkills} />
-      </div>
+      </motion.div>
     </section>
   );
 }
