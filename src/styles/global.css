@@ -187,6 +187,9 @@ a {
   border-right: 1px solid var(--border);
   box-shadow: 0 0 0 1px rgba(0,0,0,0.02), var(--shadow);
 }
+.section {
+  padding: 6rem 0;
+}
 
 /* Wider screens */
 @media (min-width: 1024px) {

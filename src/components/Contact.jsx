@@ -3,7 +3,7 @@ import { Mail, Github, Linkedin, FileText } from "lucide-react";
 
 function Contact() {
   return (
-    <section id="contact" className="contact-section">
+    <section id="contact" className="contact-section section">
       <div className="contact-wrapper ">
         {/* LEFT — FORM */}
         <div className="contact-form">

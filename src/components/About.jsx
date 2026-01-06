@@ -2,7 +2,7 @@ import "../styles/About.css";
 
 export default function About() {
   return (
-    <section className="about" id="about">
+    <section className="about section" id="about">
       <div className="about-inner">
         {/* Photo */}
         <div className="about-photo">

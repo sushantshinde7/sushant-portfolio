@@ -242,7 +242,7 @@
   background: linear-gradient(
     to bottom,
     transparent,
-    var(--app-bg)
+    var(--content-bg)
   );
   pointer-events: none;
 }
