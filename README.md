@@ -6,7 +6,7 @@ Personal portfolio website built using React and Vite. The project contains stru
 
 ## Included Sections
 
-- Hero / Introduction  
+- Introduction 
 - About  
 - Skills  
 - Projects  
@@ -19,9 +19,9 @@ Personal portfolio website built using React and Vite. The project contains stru
 
 - React  
 - Vite  
-- CSS  
+- CSS (modular & centralized styling)
 - Lucide Icons  
-- Framer Motion
+- Framer Motion (animations & transitions)
   
 ---
 
