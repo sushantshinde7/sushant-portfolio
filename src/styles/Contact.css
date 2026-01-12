@@ -36,7 +36,7 @@
 
 /* LEFT */
 .contact-form {
-  background: var(--card-bg);
+  background: var(--surface-bg);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 2.5rem;
@@ -77,7 +77,7 @@
 
 .field input,
 .field textarea {
-  background: var(--bg);
+  background: var(--surface-bg);
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 0.7rem;
@@ -105,7 +105,7 @@
 
 /* RIGHT */
 .contact-cta {
-  background: var(--card-bg);
+  background: var(--surface-bg);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 2.5rem;

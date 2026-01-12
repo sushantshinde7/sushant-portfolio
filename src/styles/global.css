@@ -12,19 +12,24 @@
 html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
-  scrollbar-color: rgba(0, 0, 0, 0.35) transparent;
 }
 
 /* =========================
    THEME VARIABLES
 ========================= */
 
-/* -------- LIGHT MODE (DEFAULT) -------- */
+/* -------- LIGHT MODE -------- */
 :root {
-  /* Core surfaces */
-  --app-bg: #ffffff;            /* pure canvas */
-  --content-bg: #f7f7f8;        /* soft white */
-  --card-bg: #ffffff;
+  /* Canvas */
+  --app-bg: #ffffff;
+
+  /* Main readable column */
+  --content-bg: #f7f7f8;
+
+  /* Surface (cards, navbar, footer, forms, sections) */
+  --surface-bg: #ffffff;
+
+  /* Footer */
   --footer-bg: #f2f3f5;
 
   /* Texture */
@@ -37,89 +42,56 @@ html {
   /* UI */
   --primary: #4f46e5;
   --border: #e1e1e3;
-  --toggle-bg: #dcdcdc;
 
-  /* Surface helpers */
-  --surface-1: #ffffff;
-  --surface-2: #f5f5f7;
+  /* Layout */
+  --nav-height: 56px;
 
   /* Effects */
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  
+
   /* Fonts */
-  --font-ui: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-ui: "Inter", system-ui, sans-serif;
 }
 
 /* -------- DARK MODE -------- */
 [data-theme="dark"] {
-  /* Core surfaces */
   --app-bg: #000000;
   --content-bg: #242424;
-  --card-bg: #161616;
+  --surface-bg: #161616;
   --footer-bg: #111111;
 
-  /* Texture */
   --dot-color: rgba(255, 255, 255, 0.35);
 
-  /* Text */
   --text: #f5f5f5;
   --text-muted: #cccccc;
 
-  /* UI */
   --border: #333333;
-  --toggle-bg: #444444;
 
-  /* Surface helpers */
-  --surface-1: #1a1a1a;
-  --surface-2: #222222;
-
-  /* Effects */
   --shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
 }
 
 /* =========================
-   GLOBAL TYPOGRAPHY
+   GLOBAL BASE
 ========================= */
 body {
   background: var(--app-bg);
   color: var(--text);
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-ui);
 }
 
-
-/* ===== Modern Thin Scrollbar ===== */
+/* =========================
+   SCROLLBAR
+========================= */
 ::-webkit-scrollbar {
   width: 6px;
-  height: 6px;
 }
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.25);
   border-radius: 999px;
-  border: 2px solid transparent; /* creates padding illusion */
-  background-clip: content-box;
 }
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
 [data-theme="dark"] ::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.25);
 }
-
-[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
-[data-theme="dark"] {
-  scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
-}
-
 
 /* =========================
    BUTTONS
@@ -130,17 +102,18 @@ body {
   gap: 0.5rem;
   padding: 0.7rem 1.1rem;
   border-radius: 6px;
-  text-decoration: none;
   font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.15s ease;
 }
+
 .btn:hover {
   transform: translateY(-1px);
-  transition: transform 0.15s ease;
 }
 
 .btn-primary {
   background: var(--primary);
-  color: #ffffff;
+  color: #fff;
 }
 
 .btn-secondary {
@@ -159,16 +132,12 @@ a {
 /* =========================
    LAYOUT
 ========================= */
-
-/* App shell (outer canvas only) */
 .app-shell {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 5vw 90vw 5vw;
 
-  background-color: var(--app-bg);
-  background-size: 22px 22px;
-  /* Dot texture */
+  background: var(--app-bg);
   background-image: radial-gradient(
     var(--dot-color) 1.5px,
     transparent 1.2px
@@ -176,22 +145,22 @@ a {
   background-size: 18px 16px;
 }
 
-/* Main readable column */
 .content-container {
   grid-column: 2;
   background: var(--content-bg);
   padding: 0 1rem;
 
-  /* separation (critical for light mode) */
   border-left: 1px solid var(--border);
   border-right: 1px solid var(--border);
-  box-shadow: 0 0 0 1px rgba(0,0,0,0.02), var(--shadow);
-}
-.section {
-  padding: 6rem 0;
+  box-shadow: var(--shadow);
 }
 
-/* Wider screens */
+.section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+/* Desktop spacing */
 @media (min-width: 1024px) {
   .content-container {
     padding: 0 2rem;
