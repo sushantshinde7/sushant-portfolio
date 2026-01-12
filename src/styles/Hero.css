@@ -1,11 +1,11 @@
 /* ===== Hero Section ===== */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: calc(100vh - var(--nav-height));
   overflow: hidden;
   display: flex;
   align-items: center;
-  padding-top: var(--nav-height, 42px);
+  padding-top: var(--nav-height);
   background:
   radial-gradient(
     140% 120% at 75% 45%,
@@ -145,27 +145,6 @@
   margin-top: 2rem;
   display: flex;
   gap: 1rem;
-}
-
-.btn {
-  padding: 0.6rem 1.4rem;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.btn.primary {
-  background: var(--text);
-  color: var(--app-bg);
-}
-
-.btn.secondary {
-  border: 1px solid var(--text);
-}
-
-.btn:hover {
-  transform: translateY(-1px);
-  opacity: 0.9;
 }
 
 .hero-socials {

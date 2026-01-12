@@ -29,12 +29,12 @@ export default function Hero() {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn primary"
+              className="btn btn-primary"
             >
               Resume
             </a>
 
-            <a href="#contact" className="btn secondary">
+            <a href="#contact" className="btn btn-secondary">
               Contact
             </a>
           </div>

@@ -91,9 +91,9 @@
 
 .field input:focus,
 .field textarea:focus {
-  border-color: var(--primary);
-  background: var(--bg);
+  background: var(--surface-bg);
 }
+
 
 
 .response-note {
