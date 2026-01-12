@@ -2,9 +2,11 @@
 
 Personal portfolio website built using React and Vite. The project contains structured UI components and commonly used portfolio sections to present personal information, skills, and project work in a clean and organized layout. It follows a component-based structure with modular sections, centralized styling, and static assets.
 
+## Personal Portfolio is Live now on Vercel --> [Live Demo](https://sushantdev.vercel.app/)
+
 ## Included Sections
 
-- Hero / Introduction  
+- Introduction 
 - About  
 - Skills  
 - Projects  
@@ -17,9 +19,9 @@ Personal portfolio website built using React and Vite. The project contains stru
 
 - React  
 - Vite  
-- CSS  
+- CSS (modular & centralized styling)
 - Lucide Icons  
-- Framer Motion
+- Framer Motion (animations & transitions)
   
 ---
 
