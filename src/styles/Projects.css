@@ -1,8 +1,13 @@
+/* ================================
+   Projects Section Container
+================================ */
+
 .project-container {
   position: relative;
   isolation: isolate;
-
 }
+
+/* Bottom divider */
 .project-container::after {
   content: "";
   display: block;
@@ -22,6 +27,7 @@
   content: "";
   position: absolute;
   inset: 0;
+  z-index: -1;
 
   background: linear-gradient(
     180deg,
@@ -32,10 +38,26 @@
     var(--section-tint) 85%,
     var(--section-tint) 100% /* NOT transparent */
   );
-
-  z-index: -1;
 }
 
+/* ================================
+   Inner Layout
+================================ */
+
+.projects-inner {
+  padding: 2rem 0.7rem;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .projects-inner {
+    padding: 3rem 2rem;
+  }
+}
+
+/* ================================
+   Section Header
+================================ */
 
 .division {
   width: 60px;
@@ -55,12 +77,30 @@
   margin-bottom: 3rem;
 }
 
+/* ================================
+   Projects Grid
+================================ */
+
 .project-list {
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   margin-bottom: 2.5rem;
 }
+
+/* ================================
+   Projects CTA
+================================ */
+
+.projects-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* ================================
+   Projects Button
+================================ */
 
 .btn-projects {
   display: inline-flex;
@@ -96,21 +136,4 @@
 
 .btn-projects:hover svg {
   transform: translateX(3px);
-}
-
-.projects-inner {
-  padding: 2rem 0.7rem;
-}
-
-.projects-cta {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-/* Desktop */
-@media (min-width: 1024px) {
-  .projects-inner {
-    padding: 3rem 2rem;
-  }
 }
