@@ -2,23 +2,19 @@
   padding: 0 0;
 }
 
-
 .contact-wrapper {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 1rem;
   background: transparent;
   border: none;
-  padding:0 10px;
+  padding: 0 10px;
 }
 
 #contact {
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    var(--footer-bg) 100%
-  );
-}#contact {
+  background: linear-gradient(180deg, transparent 0%, var(--footer-bg) 100%);
+}
+#contact {
   position: relative;
   isolation: isolate;
 }
@@ -30,22 +26,19 @@
 
   background: linear-gradient(
     180deg,
-    var(--section-tint) 0%,   /* not transparent */
-    var(--section-tint-strong) 40%,
+    var(--section-tint) 0%,
+    /* not transparent */ var(--section-tint-strong) 40%,
     var(--footer-bg) 100%
   );
 
   z-index: -1;
 }
 
-
 /* LEFT */
 .contact-form {
   background: var(--card-bg);
   border: 1px solid var(--border);
-  box-shadow:
-    0 1px 0 rgba(0,0,0,0.02),
-    0 8px 24px rgba(0,0,0,0.06);
+  box-shadow: var(--shadow);
   border-radius: 12px;
   padding: 2.5rem;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
@@ -82,7 +75,6 @@
   text-transform: uppercase;
 }
 
-
 .field input,
 .field textarea {
   background: var(--surface-bg);
@@ -102,8 +94,6 @@
   background: var(--surface-bg);
 }
 
-
-
 .response-note {
   display: block;
   margin-top: 1rem;
@@ -115,7 +105,7 @@
 .contact-cta {
   background: var(--card-bg);
   border: 1px solid var(--border);
-  box-shadow: var();
+  box-shadow: var(--shadow);
   border-radius: 12px;
   padding: 2.5rem;
   display: flex;
@@ -163,7 +153,6 @@
   transform: translateY(-2px);
 }
 
-
 .btn-primary,
 .btn-secondary {
   transition: background 0.2s ease, transform 0.15s ease;
@@ -180,4 +169,3 @@
     grid-template-columns: 1fr;
   }
 }
-
