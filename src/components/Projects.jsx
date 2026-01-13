@@ -51,35 +51,37 @@ function Projects() {
       ],
       github: "https://github.com/sushantshinde7/netflix-clone-react-firebase",
       live: "https://my-netflix-clone-react.vercel.app/",
-    }
+    },
   ];
 
   return (
-    <section id="projects" className="project-container container section">
-      <div className="division"></div>
+    <section id="projects" className="project-container section">
+      <div className="projects-inner">
+        <div className="division"></div>
 
-      <div className="content-text">
-        <h2>Projects</h2>
-        <p>Selected personal and production-ready work</p>
+        <div className="content-text">
+          <h2>Projects</h2>
+          <p>Selected personal and production-ready work</p>
+        </div>
+
+        <div className="projects-list">
+          {projectList.map((project, index) => (
+            <ProjectCard
+              key={index}
+              title={project.title}
+              label={project.label}
+              description={project.description}
+              tags={project.tags}
+              github={project.github}
+              live={project.live}
+            />
+          ))}
+        </div>
+
+        <a className="btn btn-secondary" href="#" target="_blank">
+          See More <ArrowRight size={18} />
+        </a>
       </div>
-
-      <div className="projects-list">
-        {projectList.map((project, index) => (
-          <ProjectCard
-            key={index}
-            title={project.title}
-            label={project.label}
-            description={project.description}
-            tags={project.tags}
-            github={project.github}
-            live={project.live}
-          />
-        ))}
-      </div>
-
-      <a className="btn btn-secondary" href="#" target="_blank">
-        See More <ArrowRight size={18} />
-      </a>
     </section>
   );
 }

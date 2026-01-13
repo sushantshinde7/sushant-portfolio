@@ -9,6 +9,7 @@
   min-height: 260px;
 
   background: var(--card-bg);
+  backdrop-filter: saturate(1.05);
   border: 1px solid var(--border);
   border-radius: 12px;
   font-family: var(--font-ui);
@@ -29,7 +30,7 @@
   background: linear-gradient(
     135deg,
     var(--surface-2),
-    var(--surface-1)
+    transparent
   );
 
   display: flex;

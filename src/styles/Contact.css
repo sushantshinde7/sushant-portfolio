@@ -32,7 +32,27 @@
     transparent 0%,
     var(--footer-bg) 100%
   );
+}#contact {
+  position: relative;
+  isolation: isolate;
 }
+
+#contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--section-tint) 35%,
+    var(--section-tint-strong) 65%,
+    var(--footer-bg) 100%
+  );
+
+  z-index: -1;
+}
+
 
 /* LEFT */
 .contact-form {

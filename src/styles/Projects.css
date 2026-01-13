@@ -1,8 +1,28 @@
 .project-container {
-  padding: 5rem 1rem;
-  text-align: center;
-  background: transparent;
+  position: relative;
+  isolation: isolate;
+
 }
+
+/* Section breathing gradient */
+.project-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--section-tint) 20%,
+    var(--section-tint-strong) 45%,
+    var(--section-tint-strong) 55%,
+    var(--section-tint) 80%,
+    transparent 100%
+  );
+
+  z-index: -1;
+}
+
 
 .division {
   width: 60px;
@@ -34,4 +54,15 @@
   border: 1px solid var(--primary);
   color: var(--primary);
   background: var(--bg);
+}
+
+.projects-inner {
+  padding: 5rem 1rem;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .projects-inner {
+    padding: 6rem 2rem;
+  }
 }
