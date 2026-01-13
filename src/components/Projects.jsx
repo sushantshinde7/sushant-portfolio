@@ -78,9 +78,15 @@ function Projects() {
           ))}
         </div>
 
-        <a className="btn btn-secondary" href="#" target="_blank">
-          See More <ArrowRight size={18} />
-        </a>
+        <div className="projects-cta">
+          <a
+            className="btn btn-secondary btn-projects"
+            href="#"
+            target="_blank"
+          >
+            See More <ArrowRight size={18} />
+          </a>
+        </div>
       </div>
     </section>
   );

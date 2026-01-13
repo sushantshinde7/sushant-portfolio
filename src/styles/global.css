@@ -133,8 +133,10 @@ body {
 }
 
 .btn-secondary {
+  padding: 0.7rem 1.2rem;
   border: 1px solid var(--primary);
   color: var(--primary);
+  background: var(--bg);
 }
 
 /* =========================
@@ -172,7 +174,7 @@ a {
 }
 
 .section {
-  padding: 6rem 0;
+  padding: 3rem 0;
   position: relative;
 }
 
