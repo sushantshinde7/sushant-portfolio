@@ -41,8 +41,11 @@
 
 /* LEFT */
 .contact-form {
-  background: var(--surface-bg);
+  background: var(--card-bg);
   border: 1px solid var(--border);
+  box-shadow:
+    0 1px 0 rgba(0,0,0,0.02),
+    0 8px 24px rgba(0,0,0,0.06);
   border-radius: 12px;
   padding: 2.5rem;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
@@ -110,8 +113,9 @@
 
 /* RIGHT */
 .contact-cta {
-  background: var(--surface-bg);
+  background: var(--card-bg);
   border: 1px solid var(--border);
+  box-shadow: var();
   border-radius: 12px;
   padding: 2.5rem;
   display: flex;

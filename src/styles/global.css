@@ -24,39 +24,42 @@ html {
   --app-bg: #ffffff;
 
   /* Main readable column */
-  --content-bg: #f7f7f8;
+  --content-bg: #f1f2f4;
 
   /* Surface (cards, navbar, footer, forms, sections) */
   --surface-bg: #ffffff;
 
   /* Footer */
-  --footer-bg: #f2f3f5;
+  --footer-bg: #eef0f3;
 
   /* Texture */
-  --dot-color: rgba(0, 0, 0, 0.35);
+  --dot-color: rgba(0, 0, 0, 0.28);
 
   /* Text */
   --text: #111111;
-  --text-muted: #555555;
+  --text-muted: #5a5a5a;
 
   /* UI */
   --primary: #4f46e5;
-  --border: #e1e1e3;
+  --border: #dadce0;
 
   /* Card & subtle surfaces */
   --card-bg: #ffffff;
   --surface-1: #ffffff;
-  --surface-2: #f1f2f4;
+  --surface-2: #eceef2;
 
   /* Section transitions */
-  --section-tint: rgba(79, 70, 229, 0.04); /* primary, very subtle */
-  --section-tint-strong: rgba(79, 70, 229, 0.08);
+  --section-tint: rgba(79, 70, 229, 0.06);
+  --section-tint-strong: rgba(79, 70, 229, 0.12);
+
 
   /* Layout */
   --nav-height: 56px;
 
   /* Effects */
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow:
+    0 1px 0 rgba(0,0,0,0.03),
+    0 10px 30px rgba(0,0,0,0.08);
 
   /* Fonts */
   --font-ui: "Inter", system-ui, sans-serif;
@@ -64,27 +67,44 @@ html {
 
 /* -------- DARK MODE -------- */
 [data-theme="dark"] {
+  /* Canvas */
   --app-bg: #000000;
-  --content-bg: #242424;
-  --surface-bg: #161616;
-  --footer-bg: #111111;
 
-  --dot-color: rgba(255, 255, 255, 0.35);
+  /* Main readable column */
+  --content-bg: #141414;
 
-  --card-bg: #161616;
-  --surface-1: #161616;
-  --surface-2: #1f1f1f;
+  /* Surface */
+  --surface-bg: #1a1a1a;
 
-  --section-tint: rgba(99, 102, 241, 0.06);
-  --section-tint-strong: rgba(99, 102, 241, 0.12);
+  /* Footer */
+  --footer-bg: #0d0d0d;
 
+  /* Texture */
+  --dot-color: rgba(255, 255, 255, 0.22);
+
+  /* Card & subtle surfaces */
+  --card-bg: #1a1a1a;
+  --surface-1: #1a1a1a;
+  --surface-2: #232323;
+
+  /* Text */
   --text: #f5f5f5;
-  --text-muted: #cccccc;
+  --text-muted: #bdbdbd;
 
-  --border: #333333;
+  /* UI */
+  --primary: #818cf8;
+  --border: #2a2a2a;
 
-  --shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+  /* Section transitions */
+  --section-tint: rgba(129, 140, 248, 0.08);
+  --section-tint-strong: rgba(129, 140, 248, 0.16);
+
+  /* Effects */
+  --shadow:
+    0 1px 0 rgba(255,255,255,0.04),
+    0 12px 28px rgba(0,0,0,0.9);
 }
+
 
 /* =========================
    GLOBAL BASE
