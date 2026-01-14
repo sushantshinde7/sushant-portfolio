@@ -94,7 +94,7 @@ function SkillSection({ title, skills }) {
 
 export default function Skills() {
   return (
-    <section id="skills" className="skills-wrapper container section">
+    <section id="skills" className="skills-container section">
       <motion.header
         className="skills-header"
         variants={sectionFade}
