@@ -36,7 +36,7 @@
     var(--section-tint-strong) 45%,
     var(--section-tint-strong) 60%,
     var(--section-tint) 85%,
-    var(--section-tint) 100% /* NOT transparent */
+    transparent 100% /* NOT transparent */
   );
 }
 

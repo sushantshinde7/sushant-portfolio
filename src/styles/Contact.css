@@ -26,9 +26,12 @@
 
   background: linear-gradient(
     180deg,
-    var(--section-tint) 0%,
-    /* not transparent */ var(--section-tint-strong) 40%,
-    var(--footer-bg) 100%
+    transparent 0%,
+    var(--section-tint) 20%,
+    var(--section-tint-strong) 45%,
+    var(--section-tint-strong) 60%,
+    var(--section-tint) 85%,
+    transparent 100% 
   );
 
   z-index: -1;
