@@ -95,30 +95,33 @@ function SkillSection({ title, skills }) {
 export default function Skills() {
   return (
     <section id="skills" className="skills-container section">
-      <motion.header
-        className="skills-header"
-        variants={sectionFade}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
-      >
-        <h2 className="section-heading">Skills</h2>
-        <p className="section-subtitle">
-          Tools and technologies I use to build modern web interfaces.
-        </p>
-      </motion.header>
+      <div className="section-inner skills-inner">
+        <motion.header
+          className="skills-header"
+          variants={sectionFade}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+        >
+          <h2 className="section-heading">Skills</h2>
+          <p className="section-subtitle">
+            Tools and technologies I use to build modern web interfaces.
+          </p>
+        </motion.header>
 
-      <motion.div
-        className="skills-sections"
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
-      >
-        <SkillSection title="Frontend" skills={frontendSkills} />
-        <SkillSection title="Web Programming" skills={webProgrammingSkills} />
-        <SkillSection title="Tools & Deployment" skills={toolsSkills} />
-      </motion.div>
+        <motion.div
+          className="skills-sections"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+        >
+          <SkillSection title="Frontend" skills={frontendSkills} />
+          <SkillSection title="Web Programming" skills={webProgrammingSkills} />
+          <SkillSection title="Tools & Deployment" skills={toolsSkills} />
+        </motion.div>
+      </div>
     </section>
   );
 }
+

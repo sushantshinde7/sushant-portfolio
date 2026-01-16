@@ -105,6 +105,17 @@ html {
     0 12px 28px rgba(0,0,0,0.9);
 }
 
+:root {
+  /* Horizontal rhythm */
+  --section-x-padding: clamp(1rem, 4vw, 2rem);
+
+  /* Vertical rhythm */
+  --section-y-padding: clamp(3rem, 8vh, 4.5rem);
+
+  /* Card inset inside sections */
+  --section-inner-gap: clamp(2rem, 5vh, 3rem);
+}
+
 
 /* =========================
    GLOBAL BASE
@@ -194,8 +205,18 @@ a {
 }
 
 .section {
-  padding: 3rem 0;
+  padding: var(--section-y-padding) 0;
   position: relative;
+}
+
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: var(--section-x-padding);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-inner-gap);
 }
 
 /* Desktop spacing */

@@ -32,9 +32,6 @@
    ABOUT – INNER SPACING
 ========================= */
 
-.about-inner {
-  padding: 2.5rem 0.9rem;
-}
 
 /* Desktop */
 @media (min-width: 1024px) {
@@ -54,7 +51,7 @@
   background: var(--surface-1);
   border-radius: 24px;
   padding: 3.5rem;
-
+  width: 100%;
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
 }

@@ -7,8 +7,8 @@
   grid-template-columns: clamp(280px, 35%, 420px) 1fr;
   gap: 2.5rem;
 
-  padding: 2.25rem;
-  margin-bottom: 2.5rem;
+  width: 100%; /* card never controls horizontal gutters */
+  padding: 2rem;
 
   min-height: 260px;
 
@@ -21,8 +21,29 @@
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.project-card:last-child {
-  margin-bottom: 1rem;
+.project-card {
+  position: relative;
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  left: 2rem;
+  right: 2rem;
+  bottom: -1.375rem;
+
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--border),
+    transparent
+  );
+  opacity: 0.35;
+}
+
+.project-card:last-child::after {
+  display: none;
 }
 
 .project-card:hover {
@@ -110,9 +131,7 @@
   line-height: 1.65;
   color: var(--text-muted);
 
-  margin-bottom: 1.25rem;
   opacity: 0.92;
-
   max-width: 58ch;
   text-align: left;
 
@@ -133,7 +152,6 @@
 
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 .project-tags li {
@@ -185,17 +203,6 @@
    Animations
 ================================ */
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @keyframes cardFade {
   from {
     opacity: 0;
@@ -206,3 +213,4 @@
     transform: translateY(0);
   }
 }
+

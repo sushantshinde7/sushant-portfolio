@@ -1,5 +1,5 @@
 /* ================================
-   Projects Section Container
+   Projects Section — Container
 ================================ */
 
 .project-container {
@@ -7,22 +7,7 @@
   isolation: isolate;
 }
 
-/* Bottom divider */
-.project-container::after {
-  content: "";
-  display: block;
-  height: 1px;
-  margin-top: 1.5rem;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--border),
-    transparent
-  );
-  opacity: 0.35;
-}
-
-/* Section breathing gradient */
+/* Section background continuity */
 .project-container::before {
   content: "";
   position: absolute;
@@ -32,26 +17,42 @@
   background: linear-gradient(
     180deg,
     transparent 0%,
-    var(--section-tint) 20%,
+    var(--section-tint) 18%,
     var(--section-tint-strong) 45%,
-    var(--section-tint-strong) 60%,
-    var(--section-tint) 85%,
-    transparent 100% /* NOT transparent */
+    var(--section-tint-strong) 65%,
+    var(--section-tint) 88%,
+    transparent 100%
   );
 }
 
+/* Bottom divider */
+.project-container::after {
+  content: "";
+  display: block;
+  height: 1px;
+  margin-top: 2rem;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--border),
+    transparent
+  );
+  opacity: 0.35;
+}
+
 /* ================================
-   Inner Layout
+   Inner Layout (controls gutters)
 ================================ */
 
 .projects-inner {
-  padding: 2rem 0.7rem;
+  padding: 3rem 1.25rem; /* mobile-first */
 }
 
 /* Desktop */
 @media (min-width: 1024px) {
   .projects-inner {
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
   }
 }
 
@@ -59,11 +60,16 @@
    Section Header
 ================================ */
 
+.content-text {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
 .division {
   width: 60px;
   height: 3px;
   background: var(--primary);
-  margin: 0 auto 2rem;
+  margin: 0 auto 1.75rem;
 }
 
 .content-text h2 {
@@ -74,18 +80,18 @@
 
 .content-text p {
   color: var(--text-muted);
-  margin-bottom: 3rem;
+  max-width: 60ch;
+  margin-inline: auto;
 }
 
 /* ================================
-   Projects Grid
+   Projects List (vertical rhythm)
 ================================ */
 
-.project-list {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  margin-bottom: 2.5rem;
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* vertical spacing ONLY */
 }
 
 /* ================================
@@ -95,7 +101,7 @@
 .projects-cta {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 /* ================================
@@ -108,7 +114,7 @@
   gap: 0.6rem;
 
   padding: 0.85rem 1.6rem;
-  border-radius: 999px; /* pill */
+  border-radius: 999px;
 
   font-size: 0.9rem;
   font-weight: 500;

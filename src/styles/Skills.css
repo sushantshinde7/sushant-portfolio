@@ -1,9 +1,13 @@
+/* =========================
+   Skills — Section Surface
+========================= */
+
 .skills-container {
   position: relative;
   isolation: isolate;
 }
 
-/* breathing gradient */
+/* Breathing gradient */
 .skills-container::before {
   content: "";
   position: absolute;
@@ -21,12 +25,13 @@
   );
 }
 
-/* bottom divider */
+/* Bottom divider (section boundary only) */
 .skills-container::after {
   content: "";
   display: block;
   height: 1px;
   margin-top: 1.5rem;
+
   background: linear-gradient(
     90deg,
     transparent,
@@ -36,11 +41,15 @@
   opacity: 0.35;
 }
 
+/* =========================
+   Inner Layout
+========================= */
+
 .skills-inner {
-  padding: 2rem 0.7rem;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem; /* section rhythm */
+  padding: 2rem 1.25rem;
 }
 
 /* Desktop */
@@ -49,6 +58,10 @@
     padding: 3rem 2rem;
   }
 }
+
+/* =========================
+   Section Header
+========================= */
 
 .skills-header {
   max-width: 640px;
@@ -69,20 +82,37 @@
   line-height: 1.5;
 }
 
-/* Section block */
+/* =========================
+   Skills Groups Container
+========================= */
+
+.skills-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* LOCAL spacing between cards */
+}
+
+/* =========================
+   Skill Section Card
+========================= */
+
 .skills-section-block {
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
+
+  width: 100%; /* card never controls gutters */
   padding: 1.4rem 1.6rem;
-  margin: 0 10px;
+
   border-radius: 16px;
   background: var(--surface-1);
   border: 1px solid var(--border);
 }
 
+/* =========================
+   Section Title
+========================= */
 
-/* Section title */
 .skills-title {
   font-size: 1rem;
   font-weight: 600;
@@ -90,23 +120,29 @@
   letter-spacing: 0.2px;
 }
 
+/* =========================
+   Skills Grid
+========================= */
 
-/* Grid layout */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   gap: 1.4rem;
 }
 
+/* =========================
+   Skill Item
+========================= */
 
-/* Skill item */
 .skill-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
+
   padding: 0.9rem 0.4rem;
   border-radius: 12px;
+
   background: transparent;
   transition: transform 0.2s ease, background 0.2s ease;
 }
@@ -115,7 +151,6 @@
   transform: translateY(-3px);
   background: var(--surface-2);
 }
-
 
 /* Icon */
 .skill-icon {
@@ -129,16 +164,11 @@
   text-align: center;
 }
 
-/* Responsive behavior */
+/* =========================
+   Responsive
+========================= */
+
 @media (max-width: 768px) {
-  .skills-wrapper {
-    gap: 3rem;
-  }
-
-  .skills-section-block {
-    padding: 1.4rem 1.4rem;
-  }
-
   .skills-grid {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 1.2rem;

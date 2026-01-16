@@ -3,7 +3,7 @@ import "../styles/About.css";
 export default function About() {
   return (
     <section id="about" className="about-container section">
-      <div className="about-inner">
+      <div className="section-inner about-inner">
         <div className="about-box">
           {/* Left visual block */}
           <div className="about-visual" aria-hidden />
