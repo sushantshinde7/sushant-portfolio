@@ -7,17 +7,11 @@
   align-items: center;
   padding-top: var(--nav-height);
   background:
-  radial-gradient(
-    140% 120% at 75% 45%,
-    rgba(120, 130, 255, 0.12),
-    rgba(120, 130, 255, 0.04) 45%,
-    transparent 70%
-  ),
   linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.25),
-    transparent 40%
-  );
+      to bottom,
+      rgba(0, 0, 0, 0.18),
+      transparent 45%
+    );
 }
 
 .hero::before {
@@ -25,7 +19,7 @@
   position: absolute;
   inset: 0;
   background: var(--content-bg);
-  opacity: 0.45;
+  opacity: 0.28;
   z-index: 0;
 }
 
@@ -44,9 +38,9 @@
 
   background:
     radial-gradient(
-      60% 80% at 75% 45%,
-      rgba(255, 255, 255, 0.06),
-      transparent 70%
+      70% 90% at 70% 45%,
+      rgba(255, 255, 255, 0.035),
+      transparent 75%
     );
 
   /* MASK edges so container bg dominates */
@@ -86,18 +80,23 @@
   background:
     radial-gradient(
       circle at 35% 50%,
-      rgba(120, 130, 255, 0.22),
-      rgba(120, 130, 255, 0.12) 35%,
+      rgba(120, 130, 255, 0.18),
+      rgba(120, 130, 255, 0.10) 35%,
       transparent 65%
     ),
     radial-gradient(
       circle at 50% 60%,
-      rgba(90, 100, 220, 0.18),
+      rgba(90, 100, 220, 0.14),
       transparent 70%
     );
 
-  filter: blur(45px);
-  animation: atmosphereFloat 22s ease-in-out infinite;
+  filter: blur(55px);
+  animation: atmosphereFloat 32s ease-in-out infinite;
+}
+@keyframes atmosphereFloat {
+  0% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(-50%) translateX(-12px); }
+  100% { transform: translateY(-50%) translateX(0); }
 }
 
 
@@ -125,7 +124,7 @@
 .hero-name {
   font-size: clamp(3.5rem, 6vw, 5rem);
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.015em;
   margin: 0.2rem 0;
 }
 
@@ -230,5 +229,16 @@
 @media (max-width: 768px) {
   .hero-atmosphere {
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-bg::before {
+    background:
+      radial-gradient(
+        120% 80% at 50% 30%,
+        rgba(120, 130, 255, 0.08),
+        transparent 70%
+      );
   }
 }
