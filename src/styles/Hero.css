@@ -169,20 +169,20 @@
   transform: translateX(-50%);
   width: 22px;
   height: 36px;
-  border: 1px solid var(--text);
+  border: 1px solid var(--border);
+  opacity: 0.9;
   border-radius: 999px;
   display: flex;
   justify-content: center;
   padding-top: 6px;
-  opacity: 0.6;
 }
 
 .scroll-dot {
   width: 4px;
   height: 4px;
-  background: var(--text);
+  background: var(--text-muted);
   border-radius: 50%;
-  animation: scroll 1.4s infinite ease-in-out;
+  animation: scroll 2.4s infinite ease-in-out;
 }
 
 /* ===== Animations ===== */
