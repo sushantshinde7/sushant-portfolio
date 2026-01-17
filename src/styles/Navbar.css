@@ -5,11 +5,25 @@
   margin: 0 -1rem;
   width: calc(100% + 2rem);
 
-  background: var(--surface-bg);
+  background:
+  linear-gradient(
+    to bottom,
+    var(--surface-bg),
+    rgba(0, 0, 0, 0.02)
+  );
   z-index: 1000;
 
   border-bottom: 1px solid var(--border);
   border-radius: 0 0 10px 10px;
+}
+
+[data-theme="dark"] .navbar {
+  background:
+    linear-gradient(
+      to bottom,
+      var(--surface-bg),
+      rgba(255, 255, 255, 0.02)
+    );
 }
 
 /* ===== Inner layout (height-controlled) ===== */
@@ -56,9 +70,14 @@
 .nav-menu .nav-link {
   color: var(--text);
   text-decoration: none;
-  font-weight: 200;
+  font-weight: 300;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
   font-size: 0.75rem;
   
+}
+.nav-menu .nav-link:hover {
+  opacity: 1;
 }
 
 .nav-menu .btn {
@@ -130,6 +149,7 @@
   border-radius: 50%;
 
   background: var(--app-bg);
+  border: 1px solid var(--border);
   box-shadow: var(--shadow);
 
   display: flex;
@@ -173,11 +193,15 @@
   cursor: pointer;
   margin-right: 10px
 }
+.hamburger:hover .bar {
+  opacity: 1;
+}
 
 .bar {
   width: 20px;
   height: 3px;
   background: var(--text);
+  opacity: 0.8;
 }
 
 /* ===== Mobile dropdown ===== */

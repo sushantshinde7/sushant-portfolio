@@ -41,7 +41,7 @@ html {
 
   /* UI */
   --primary: #4f46e5;
-  --border: #dadce0;
+  --border: rgba(0, 0, 0, 0.08);
 
   /* Card & subtle surfaces */
   --card-bg: #ffffff;
@@ -63,6 +63,8 @@ html {
 
   /* Fonts */
   --font-ui: "Inter", system-ui, sans-serif;
+
+  --accent-soft: rgba(79, 70, 229, 0.15); /* light */
 }
 
 /* -------- DARK MODE -------- */
@@ -93,7 +95,7 @@ html {
 
   /* UI */
   --primary: #818cf8;
-  --border: #2a2a2a;
+  --border: rgba(255, 255, 255, 0.08);
 
   /* Section transitions */
   --section-tint: rgba(129, 140, 248, 0.08);
@@ -103,6 +105,9 @@ html {
   --shadow:
     0 1px 0 rgba(255,255,255,0.04),
     0 12px 28px rgba(0,0,0,0.9);
+
+  --accent-soft: rgba(129, 140, 248, 0.18); /* dark */
+
 }
 
 :root {
@@ -151,11 +156,13 @@ body {
   border-radius: 6px;
   font-weight: 500;
   text-decoration: none;
-  transition: transform 0.15s ease;
+  transition: transform 0.15s ease,
+              filter 0.15s ease;
 }
 
 .btn:hover {
   transform: translateY(-1px);
+  filter: brightness(1.05);
 }
 
 .btn-primary {
@@ -191,7 +198,12 @@ a {
     var(--dot-color) 1.5px,
     transparent 1.2px
   );
-  background-size: 18px 16px;
+  background-size: 18px 18px;
+  opacity: 0.95;
+}
+
+[data-theme="dark"] .app-shell {
+  background-size: 20px 20px;
 }
 
 .content-container {
