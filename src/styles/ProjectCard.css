@@ -16,9 +16,23 @@
   backdrop-filter: saturate(1.05);
   border: 1px solid var(--border);
   border-radius: 12px;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
 
   font-family: var(--font-ui);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  box-shadow:
+    0 8px 30px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.03);
+}
+.project-card:hover .project-visual {
+  background: linear-gradient(
+    135deg,
+    var(--surface-2),
+    var(--section-tint)
+  );
 }
 
 .project-card {
@@ -39,7 +53,7 @@
     var(--border),
     transparent
   );
-  opacity: 0.35;
+  opacity: 0.25;
 }
 
 .project-card:last-child::after {
@@ -70,6 +84,22 @@
   justify-content: center;
 
   min-height: 100%;
+}
+
+.project-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(255,255,255,0.08),
+      transparent 60%
+    );
+
+  pointer-events: none;
 }
 
 .visual-label {
@@ -104,6 +134,7 @@
   font-weight: 600;
   letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
+  line-height: 1.25;
 }
 
 /* Actions */
@@ -115,7 +146,14 @@
 
 .project-actions a {
   color: var(--text-muted);
+  position: relative;
   transition: color 0.2s ease, transform 0.15s ease;
+}
+
+.project-actions a::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
 }
 
 .project-actions a:hover {
@@ -127,13 +165,14 @@
 
 .project-description {
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.65;
   color: var(--text-muted);
 
-  opacity: 0.92;
+  opacity: 0.9;
   max-width: 58ch;
   text-align: left;
+  margin-bottom: 0.5rem;
 
   animation: cardFade 0.5s ease-out both;
 }
@@ -165,7 +204,20 @@
   border-radius: 999px;
 
   color: var(--text-muted);
-  background: var(--surface-1);
+  background: transparent;
+}
+
+.project-tags li:hover {
+  background: var(--surface-2);
+  border-color: var(--primary);
+  color: var(--text);
+}
+
+
+.project-card,
+.project-actions a,
+.btn-projects {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* ================================
