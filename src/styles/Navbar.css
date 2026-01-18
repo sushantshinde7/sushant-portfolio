@@ -5,12 +5,10 @@
   margin: 0 -1rem;
   width: calc(100% + 2rem);
 
-  background:
-  linear-gradient(
-    to bottom,
-    var(--surface-bg),
-    rgba(0, 0, 0, 0.02)
-  );
+  background: var(--surface-bg);
+  transition:
+    background 0.3s ease,
+    backdrop-filter 0.3s ease;
   z-index: 1000;
 
   border-bottom: 1px solid var(--border);
@@ -24,6 +22,15 @@
       var(--surface-bg),
       rgba(255, 255, 255, 0.06)
     );
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.45); /* dark */
+  backdrop-filter: blur(10px);
+}
+
+[data-theme="light"] .navbar.scrolled {
+  background: rgba(255, 255, 255, 0.7);
 }
 
 /* ===== Inner layout (height-controlled) ===== */

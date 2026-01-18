@@ -31,6 +31,18 @@ function Navbar() {
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
+  
+
+  useEffect(() => {
+  const onScroll = () => {
+    document
+      .querySelector(".navbar")
+      ?.classList.toggle("scrolled", window.scrollY > 10);
+  };
+
+  window.addEventListener("scroll", onScroll);
+  return () => window.removeEventListener("scroll", onScroll);
+}, []);
 
   // Close menu on outside click
   useEffect(() => {
