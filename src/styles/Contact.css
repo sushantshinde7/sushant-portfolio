@@ -14,6 +14,7 @@
     transparent 0%,
     var(--footer-bg) 100%
   );
+  padding-bottom: 5rem;
 }
 
 /* Breathing gradient */
@@ -56,7 +57,9 @@
 .contact-form {
   background: var(--card-bg);
   border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  box-shadow:
+    var(--shadow),
+    inset 0 1px 0 rgba(255,255,255,0.03);
   border-radius: 12px;
 
   padding: 2.5rem;
@@ -91,7 +94,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.1rem;
 }
 
 .field label {
@@ -118,6 +121,8 @@
 .field input:focus,
 .field textarea:focus {
   background: var(--surface-bg);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px rgba(99,102,241,0.15);
 }
 
 .response-note {
@@ -132,7 +137,12 @@
 ================================ */
 
 .contact-cta {
-  background: var(--card-bg);
+  background:
+    linear-gradient(
+      180deg,
+      var(--card-bg),
+      var(--surface-1)
+    );
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
   border-radius: 12px;
@@ -174,6 +184,12 @@
 
   font-weight: 500;
   color: var(--primary);
+  padding-bottom: 2px;
+  border-bottom: 1px dashed var(--border);
+}
+
+.direct-mail:hover {
+  border-bottom-color: var(--primary);
 }
 
 /* CTA footer */
@@ -197,6 +213,7 @@
 
 .social-links a:hover {
   color: var(--primary);
+  background: var(--surface-2);
   transform: translateY(-2px);
 }
 
@@ -210,6 +227,15 @@
 .btn-primary:hover,
 .btn-secondary:hover {
   transform: translateY(-1px);
+}
+
+
+.contact-form,
+.contact-cta,
+.social-links a,
+.btn-primary,
+.btn-secondary {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* ================================
