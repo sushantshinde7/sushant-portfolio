@@ -31,18 +31,17 @@ function Navbar() {
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
-  
 
   useEffect(() => {
-  const onScroll = () => {
-    document
-      .querySelector(".navbar")
-      ?.classList.toggle("scrolled", window.scrollY > 10);
-  };
+    const onScroll = () => {
+      document
+        .querySelector(".navbar")
+        ?.classList.toggle("scrolled", window.scrollY > 10);
+    };
 
-  window.addEventListener("scroll", onScroll);
-  return () => window.removeEventListener("scroll", onScroll);
-}, []);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Close menu on outside click
   useEffect(() => {
@@ -94,6 +93,17 @@ function Navbar() {
               HOME
             </a>
           </li>
+
+          <li>
+            <a
+              className="nav-link"
+              href="#about"
+              onClick={() => setMenuActive(false)}
+            >
+              ABOUT
+            </a>
+          </li>
+
           <li>
             <a
               className="nav-link"
@@ -103,6 +113,7 @@ function Navbar() {
               SKILLS
             </a>
           </li>
+
           <li>
             <a
               className="nav-link"
@@ -112,6 +123,7 @@ function Navbar() {
               PROJECTS
             </a>
           </li>
+
           <li>
             <a
               className="nav-link"
@@ -121,6 +133,7 @@ function Navbar() {
               CONTACT
             </a>
           </li>
+
           <li>
             <a className="nav-link btn btn-primary" href="#" target="_blank">
               RESUME <ArrowRight size={16} />
