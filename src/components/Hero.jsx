@@ -3,7 +3,7 @@ import { Github, Linkedin } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="hero" id="home">
+    <section className="hero section" data-low-contrast id="home">
       {/* Atmospheric background layers */}
       <div className="hero-bg">
         <div className="hero-noise" />
