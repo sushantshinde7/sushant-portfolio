@@ -1,10 +1,9 @@
 /* ===== Navbar shell ===== */
 .navbar {
-  position: sticky;
+  position: fixed;   /* NOT sticky */
   top: 0;
-  margin: 0 -1rem;
-  width: calc(100% + 2rem);
-
+  left: 5vw;
+  width: 90vw;
   background: var(--surface-bg);
   transition:
     background 0.3s ease,
@@ -35,13 +34,15 @@
 
 /* ===== Inner layout (height-controlled) ===== */
 .navbar-inner {
-  width: 100%;
-  height: 56px;                  /* fixed navbar height */
-  padding: 0;                    /* remove vertical padding */
+  max-width: 1200px;
+  margin: 0 auto;
+  height: var(--nav-height);
+
+  padding-inline: var(--section-x-padding);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 -7px -8px -7px;
+  
 }
 
 /* ===== Logo wrapper ===== */
