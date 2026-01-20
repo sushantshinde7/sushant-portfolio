@@ -1,36 +1,35 @@
 /* ===== Navbar shell ===== */
 .navbar {
-  position: fixed;   /* NOT sticky */
+  position: fixed;
   top: 0;
   left: 5vw;
   width: 90vw;
-  background: var(--surface-bg);
+
+  background: rgba(255, 255, 255, 0.65); /* light default */
+  backdrop-filter: blur(8px);
+
   transition:
     background 0.3s ease,
     backdrop-filter 0.3s ease;
-  z-index: 1000;
 
+  z-index: 1000;
   border-bottom: 1px solid var(--border);
   border-radius: 0 0 10px 10px;
 }
 
+
 [data-theme="dark"] .navbar {
-  background:
-    linear-gradient(
-      to bottom,
-      var(--surface-bg),
-      rgba(255, 255, 255, 0.06)
-    );
+  background: rgba(0, 0, 0, 0.45);
 }
 
 .navbar.scrolled {
-  background: rgba(0, 0, 0, 0.45); /* dark */
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.55);
 }
 
 [data-theme="light"] .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.75);
 }
+
 
 /* ===== Inner layout (height-controlled) ===== */
 .navbar-inner {
