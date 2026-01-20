@@ -87,7 +87,7 @@ function Navbar() {
           <li>
             <a
               className="nav-link"
-              href="#hero"
+              href="#"
               onClick={() => setMenuActive(false)}
             >
               HOME
