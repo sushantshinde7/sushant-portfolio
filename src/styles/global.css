@@ -214,6 +214,13 @@ a {
   border-left: 1px solid var(--border);
   border-right: 1px solid var(--border);
   box-shadow: var(--shadow);
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.main-content {
+  flex: 1;
 }
 
 .section {
