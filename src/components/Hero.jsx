@@ -59,11 +59,10 @@ export default function Hero() {
             </a>
           </div>
         </div>
-
-        {/* Scroll indicator */}
-        <div className="scroll-indicator">
-          <span className="scroll-dot" />
-        </div>
+      </div>
+      {/* Scroll indicator */}
+      <div className="scroll-indicator">
+        <span className="scroll-dot" />
       </div>
     </section>
   );

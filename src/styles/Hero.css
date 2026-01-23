@@ -224,17 +224,18 @@
 /* ===== Scroll Indicator ===== */
 .scroll-indicator {
   position: absolute;
-  bottom: 24px;
+  bottom: clamp(20px, 4vh, 40px);
   left: 50%;
   transform: translateX(-50%);
   width: 22px;
   height: 36px;
   border: 1px solid var(--border);
-  opacity: 0.9;
   border-radius: 999px;
   display: flex;
   justify-content: center;
   padding-top: 6px;
+  opacity: 0.85;
+  z-index: 2;
 }
 
 .scroll-dot {
@@ -318,6 +319,13 @@
         rgba(235, 220, 255, 0.55) 45%,
         transparent 75%
       );
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-indicator {
+    bottom: 32px;
+    opacity: 0.75;
   }
 }
 
