@@ -63,6 +63,12 @@ html {
     0 1px 0 rgba(0,0,0,0.03),
     0 10px 30px rgba(0,0,0,0.08);
 
+  --atmo-lavender-1: rgba(230, 220, 255, 0.65);
+  --atmo-lavender-2: rgba(210, 200, 255, 0.45);
+  
+  --atmo-pink: rgba(255, 220, 235, 0.55);
+  --atmo-lavender: rgba(210, 190, 255, 0.48);
+
   /* Fonts */
   --font-ui: "Inter", system-ui, sans-serif;
 

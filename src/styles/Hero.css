@@ -9,18 +9,43 @@
   background:
   linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.18),
+      rgba(255, 255, 255, 0.55),
       transparent 45%
     );
 }
 
-.hero::before {
+[data-theme="dark"] .hero {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.65),
+      transparent 45%
+    );
+}
+
+.hero-bg::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--content-bg);
-  opacity: 0.28;
-  z-index: 0;
+
+  background:
+    radial-gradient(
+      80% 100% at 65% 40%,
+      rgba(255, 245, 255, 0.85),
+      rgba(235, 220, 255, 0.55) 42%,
+      transparent 78%
+    );
+
+  mask-image: radial-gradient(
+    ellipse at 65% 45%,
+    black 58%,
+    transparent 82%
+  );
+}
+
+
+[data-theme="dark"] .hero::before {
+  opacity: 0.22;
 }
 
 /* ===== Background system ===== */
@@ -39,7 +64,8 @@
   background:
     radial-gradient(
       70% 90% at 70% 45%,
-      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.55),
+      rgba(240, 230, 255, 0.35) 40%,
       transparent 75%
     );
 
@@ -51,6 +77,15 @@
   );
 }
 
+[data-theme="dark"] .hero-bg::before {
+  background:
+    radial-gradient(
+      70% 90% at 70% 45%,
+      rgba(130, 140, 255, 0.18),
+      rgba(90, 100, 220, 0.12) 40%,
+      transparent 75%
+    );
+}
 
 /* Subtle noise */
 .hero-noise {
@@ -70,29 +105,54 @@
 /* Right-side atmosphere emphasis */
 .hero-atmosphere {
   position: absolute;
-  right: -4%;
+  right: -6%;
   top: 50%;
   transform: translateY(-50%);
 
-  width: 45%;
-  height: 120%;
+  width: 48%;
+  height: 125%;
 
+  background:
+    /* warm baby-pink cloud */
+    radial-gradient(
+      circle at 30% 45%,
+      rgba(255, 220, 235, 0.55),
+      rgba(255, 210, 230, 0.38) 32%,
+      transparent 62%
+    ),
+
+    /* lavender body */
+    radial-gradient(
+      circle at 55% 55%,
+      rgba(210, 190, 255, 0.48),
+      rgba(190, 170, 255, 0.32) 42%,
+      transparent 72%
+    );
+
+  filter: blur(48px);
+  animation: atmosphereFloat 32s ease-in-out infinite;
+}
+
+
+[data-theme="dark"] .hero-atmosphere {
   background:
     radial-gradient(
       circle at 35% 50%,
-      rgba(120, 130, 255, 0.18),
-      rgba(120, 130, 255, 0.10) 35%,
+      rgba(140, 150, 255, 0.28),
+      rgba(110, 120, 240, 0.18) 35%,
       transparent 65%
     ),
     radial-gradient(
-      circle at 50% 60%,
-      rgba(90, 100, 220, 0.14),
+      circle at 55% 60%,
+      rgba(90, 100, 220, 0.18),
       transparent 70%
     );
 
   filter: blur(55px);
-  animation: atmosphereFloat 32s ease-in-out infinite;
 }
+
+
+
 @keyframes atmosphereFloat {
   0% { transform: translateY(-50%) translateX(0); }
   50% { transform: translateY(-50%) translateX(-12px); }
@@ -216,7 +276,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 120px;
+  height: 140px;
   background: linear-gradient(
     to bottom,
     transparent,
@@ -228,17 +288,36 @@
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .hero-atmosphere {
-    display: none;
+    right: 50%;
+    top: 60%;
+    transform: translate(50%, -50%);
+
+    width: 140%;
+    height: 140%;
+
+    background:
+      radial-gradient(
+        circle at 50% 45%,
+        rgba(255, 220, 235, 0.45),
+        rgba(210, 190, 255, 0.30) 38%,
+        transparent 68%
+      );
+
+    filter: blur(42px);
+    opacity: 0.9;
   }
 }
+
 
 @media (max-width: 768px) {
   .hero-bg::before {
     background:
       radial-gradient(
-        120% 80% at 50% 30%,
-        rgba(120, 130, 255, 0.08),
-        transparent 70%
+        120% 90% at 50% 35%,
+        rgba(255, 245, 255, 0.85),
+        rgba(235, 220, 255, 0.55) 45%,
+        transparent 75%
       );
   }
 }
+
