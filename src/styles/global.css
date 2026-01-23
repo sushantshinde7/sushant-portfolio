@@ -24,7 +24,7 @@ html {
   --app-bg: #ffffff;
 
   /* Main readable column */
-  --content-bg: #f1f2f4;
+  --content-bg: #f6eaff;
 
   /* Surface (cards, navbar, footer, forms, sections) */
   --surface-bg: #ffffff;
@@ -36,17 +36,19 @@ html {
   --dot-color: rgba(0, 0, 0, 0.28);
 
   /* Text */
-  --text: #111111;
-  --text-muted: #5a5a5a;
+  --text: #0f0d0f;
+  --text-muted: #6f6892;
+
 
   /* UI */
   --primary: #4f46e5;
-  --border: rgba(0, 0, 0, 0.08);
+  --border: rgba(120, 96, 200, 0.10);
+
 
   /* Card & subtle surfaces */
   --card-bg: #ffffff;
-  --surface-1: #ffffff;
-  --surface-2: #eceef2;
+  --surface-1: #fbfaff;   /* white with lavender bias */
+  --surface-2: #f3f0ff;   /* hover / subtle elevation */
 
   /* Section transitions */
   --section-tint: rgba(79, 70, 229, 0.06);
@@ -185,6 +187,10 @@ a {
   color: inherit;
 }
 
+svg {
+  color: inherit;
+}
+
 /* =========================
    LAYOUT
 ========================= */
@@ -202,7 +208,38 @@ a {
   opacity: 0.95;
 }
 
+/* -------- LIGHT MODE APP SHELL ATMOSPHERE -------- */
+:root .app-shell {
+  background-image:
+    radial-gradient(
+      1100px 600px at 20% -10%,
+      rgba(160, 130, 255, 0.22),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at 80% 0%,
+      rgba(200, 160, 255, 0.18),
+      transparent 65%
+    ),
+    radial-gradient(
+      var(--dot-color) 1.5px,
+      transparent 1.2px
+    );
+
+  background-size:
+    auto,
+    auto,
+    18px 18px;
+}
+
+
+
+/* -------- DARK MODE APP SHELL LOCK -------- */
 [data-theme="dark"] .app-shell {
+  background-image: radial-gradient(
+    var(--dot-color) 1.5px,
+    transparent 1.2px
+  );
   background-size: 20px 20px;
 }
 
