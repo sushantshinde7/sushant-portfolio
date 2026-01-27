@@ -71,6 +71,11 @@ body:has([data-low-contrast]) .navbar {
   height: 100%;
   display: flex;
   align-items: center;
+  opacity: 0.95;
+}
+
+.logo:hover {
+  opacity: 1;
 }
 
 /* ===== SVG logo ===== */
@@ -79,6 +84,11 @@ body:has([data-low-contrast]) .navbar {
   width: auto;                   /* preserve aspect ratio */
   max-height: 96px;              /* safety clamp */
   display: block;
+  filter: drop-shadow(0 1px 0 rgba(0,0,0,0.04));
+}
+
+[data-theme="dark"] .logo-svg {
+  filter: drop-shadow(0 1px 0 rgba(255,255,255,0.05));
 }
 
 
