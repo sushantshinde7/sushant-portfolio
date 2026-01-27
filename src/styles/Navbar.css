@@ -54,7 +54,7 @@ body:has([data-low-contrast]) .navbar {
   max-width: 1200px;
   margin: 0 auto;
   height: var(--nav-height);
-
+  padding-block: 2px; /* NEW */
   padding-inline: var(--section-x-padding);
   display: flex;
   align-items: center;
