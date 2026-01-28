@@ -147,7 +147,10 @@ function Navbar() {
           <motion.div
             className="toggle-pill"
             onClick={toggleTheme}
-            animate={{ backgroundColor: darkTheme ? "#3b82f6" : "#e5e7eb" }}
+            animate={{
+    backgroundColor: darkTheme
+      ? "var(--primary)"
+      : "var(--surface-2)" }}
             transition={{ duration: 0.3 }}
           >
             <motion.div

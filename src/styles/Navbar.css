@@ -141,7 +141,7 @@ body:has([data-low-contrast]) .navbar {
   border-radius: 999px;
   padding: 2px;
   cursor: pointer;
-
+  border: 1px solid var(--border);
 }
 
 /* ===== Theme toggle ===== */
