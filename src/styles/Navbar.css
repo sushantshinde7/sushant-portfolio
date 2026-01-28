@@ -64,6 +64,11 @@ body:has([data-low-contrast]) .navbar {
   
 }
 
+.navbar-inner > * {
+  align-self: center;
+}
+
+
 /* ===== Logo wrapper ===== */
 #logo {
   color: var(--text);
@@ -81,10 +86,10 @@ body:has([data-low-contrast]) .navbar {
 }
 
 /* ===== SVG logo ===== */
-.logo-svg {
-  height: 110%;                  /* fill navbar height */
+.logo-svg {                /* fill navbar height */
   width: auto;                   /* preserve aspect ratio */
-  max-height: 96px;              /* safety clamp */
+  height: 100%;
+  max-height: calc(var(--nav-height) - 8px);               /* safety clamp */
   display: block;
   filter: drop-shadow(0 1px 0 rgba(0,0,0,0.04));
 }
@@ -102,7 +107,6 @@ body:has([data-low-contrast]) .navbar {
   list-style: none;
   padding-left: 0;
   margin: 0;
-  transform: translateY(-6px) scale(0.98);
 }
 .nav-menu.active {
   transform: translateY(0) scale(1);
@@ -287,9 +291,7 @@ body:has([data-low-contrast]) .navbar {
     opacity: 0;
     transform: translateY(-6px);
     pointer-events: none;
-    transition:
-      opacity 0.2s ease,
-      transform 0.2s ease;
+    transform: translateY(-6px) scale(0.98);
   }
 
   .nav-menu.active {
