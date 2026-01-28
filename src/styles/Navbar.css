@@ -100,8 +100,11 @@ body:has([data-low-contrast]) .navbar {
   list-style: none;
   padding-left: 0;
   margin: 0;
+  transform: translateY(-6px) scale(0.98);
 }
-
+.nav-menu.active {
+  transform: translateY(0) scale(1);
+}
 .nav-menu .nav-link {
   color: var(--text);
   text-decoration: none;
@@ -119,7 +122,7 @@ body:has([data-low-contrast]) .navbar {
 .nav-menu .btn {
   padding: 0.2rem 0.6rem;
   margin-right: 0.4rem;
-  margin-left: 0.6rem; /* separation */
+  margin-left: 0.1rem; /* separation */
   border-radius: 999px;
 }
 
