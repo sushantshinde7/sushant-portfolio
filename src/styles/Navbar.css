@@ -1,22 +1,28 @@
-/* ===== Base (works everywhere, including Safari fallback) ===== */
+/* =========================================================
+   NAVBAR — BASE & BACKDROP SYSTEM
+   ========================================================= */
+
+/* Base (Safari fallback included) */
 .navbar {
   position: fixed;
   top: 0;
   left: 5vw;
   width: 90vw;
-
-  background: rgba(255, 255, 255, 0.42); /* fallback solid-glass */
-  transition: background 0.3s ease, backdrop-filter 0.3s ease;
-
   z-index: 1000;
+
+  background: rgba(255, 255, 255, 0.42);
   border-bottom: 1px solid var(--border);
   border-radius: 0 0 10px 10px;
+
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
 
 /* Dark fallback */
 [data-theme="dark"] .navbar {
   background: rgba(0, 0, 0, 0.75);
 }
+
+/* Glass support */
 @supports ((backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))) {
   .navbar {
     background: rgba(255, 255, 255, 0.55);
@@ -29,8 +35,7 @@
   }
 }
 
-
-/* When hero is visible behind navbar */
+/* Hero-visible low contrast state */
 body:has([data-low-contrast]) .navbar {
   background: rgba(255, 255, 255, 0.65);
 }
@@ -39,29 +44,32 @@ body:has([data-low-contrast]) .navbar {
   background: rgba(0, 0, 0, 0.48);
 }
 
-
+/* Scrolled state */
 .navbar.scrolled {
   background: rgba(0, 0, 0, 0.55);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 [data-theme="light"] .navbar.scrolled {
   background: rgba(255, 255, 255, 0.75);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 
-/* ===== Inner layout (height-controlled) ===== */
+/* =========================================================
+   NAVBAR INNER LAYOUT
+   ========================================================= */
+
 .navbar-inner {
   max-width: 1200px;
   margin: 0 auto;
   height: var(--nav-height);
-  padding-block: 2px; /* NEW */
+  padding-block: 2px;
   padding-inline: var(--section-x-padding);
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
 }
 
 .navbar-inner > * {
@@ -69,7 +77,11 @@ body:has([data-low-contrast]) .navbar {
 }
 
 
-/* ===== Logo wrapper ===== */
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
 #logo {
   color: var(--text);
 }
@@ -85,42 +97,49 @@ body:has([data-low-contrast]) .navbar {
   opacity: 1;
 }
 
-/* ===== SVG logo ===== */
-.logo-svg {                /* fill navbar height */
-  width: auto;                   /* preserve aspect ratio */
+.logo-svg {
   height: 100%;
-  max-height: calc(var(--nav-height) - 8px);               /* safety clamp */
+  width: auto;
+  max-height: calc(var(--nav-height) - 8px);
   display: block;
-  filter: drop-shadow(0 1px 0 rgba(0,0,0,0.04));
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.04));
 }
 
 [data-theme="dark"] .logo-svg {
-  filter: drop-shadow(0 1px 0 rgba(255,255,255,0.05));
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.05));
 }
 
 
-/* ===== Desktop menu ===== */
+/* =========================================================
+   DESKTOP NAV MENU
+   ========================================================= */
+
 .nav-menu {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+
   list-style: none;
   padding-left: 0;
   margin: 0;
 }
+
 .nav-menu.active {
   transform: translateY(0) scale(1);
 }
+
 .nav-menu .nav-link {
   color: var(--text);
   text-decoration: none;
-  font-weight: 300;
-  opacity: 0.85;
-  transition: opacity 0.2s ease;
   font-size: 0.75rem;
+  font-weight: 300;
+
   padding: 0.1rem 0.22rem;
-  
+  opacity: 0.85;
+
+  transition: opacity 0.2s ease;
 }
+
 .nav-menu .nav-link:hover {
   opacity: 1;
 }
@@ -128,48 +147,62 @@ body:has([data-low-contrast]) .navbar {
 .nav-menu .btn {
   padding: 0.2rem 0.6rem;
   margin-right: 0.4rem;
-  margin-left: 0.1rem; /* separation */
+  margin-left: 0.1rem;
   border-radius: 999px;
 }
 
 [data-theme="light"] .nav-menu .btn {
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
-/* ===== Right controls wrapper ===== */
+
+/* =========================================================
+   RIGHT CONTROLS (TOGGLE + HAMBURGER)
+   ========================================================= */
+
 .nav-controls {
   display: flex;
   align-items: center;
-  gap: 10px; /* space between toggle + hamburger */
+  gap: 10px;
 }
-/* ===== Framer toggle pill ===== */
+
+
+
+/* =========================================================
+   THEME TOGGLE (PILL)
+   ========================================================= */
+
 .toggle-pill {
   position: relative;
   width: 46px;
   height: 22px;
-  border-radius: 999px;
   padding: 2px;
-  cursor: pointer;
+
+  border-radius: 999px;
   border: 1px solid var(--border);
+
+  cursor: pointer;
 }
 
-
-/* ===== Theme toggle ===== */
 .theme-switch {
   display: flex;
   align-items: center;
 }
 
-/* icons inside pill */
+.toggle-icons {
+  position: absolute;
+  inset: 0;
+  padding: 0 6px;
+
+  align-items: center;
+  pointer-events: none;
+}
+
 .toggle-icon {
   width: 11px;
   height: 11px;
-
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
-
 
 [data-theme="light"] .toggle-icon.sun {
   opacity: 1;
@@ -191,7 +224,7 @@ body:has([data-low-contrast]) .navbar {
   transform: rotate(90deg) scale(0.5);
 }
 
-/* knob */
+/* Toggle knob */
 .toggle-knob {
   position: absolute;
   top: 2px;
@@ -203,50 +236,43 @@ body:has([data-low-contrast]) .navbar {
 
   background: var(--app-bg);
   border: 1px solid var(--border);
-  box-shadow: 0 0 0 1px var(--border),
-              0 4px 12px color-mix(in srgb, var(--primary) 35%, transparent);
+  color: var(--text);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  transition:
-    left 0.35s ease,
-    transform 0.35s ease;
+  box-shadow:
+    0 0 0 1px var(--border),
+    0 4px 12px color-mix(in srgb, var(--primary) 35%, transparent);
 
-  color: var(--text);
+  transition: left 0.35s ease, transform 0.35s ease;
 }
 
-/* dark mode knob position */
 [data-theme="light"] .toggle-knob {
   left: 2px;
   transform: rotate(0deg);
 }
 
 [data-theme="dark"] .toggle-knob {
-  left: 25px; /* 52 - knob(18) - padding(2*2) */
+  left: 25px;
   top: 1px;
 }
 
 
-/* icons wrapper */
-.toggle-icons {
-  position: absolute;
-  inset: 0;
-  align-items: center; 
-  padding: 0 6px;
-  pointer-events: none;
-}
 
+/* =========================================================
+   HAMBURGER
+   ========================================================= */
 
-/* ===== Hamburger ===== */
 .hamburger {
   display: none;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
-  margin-right: 10px
+  margin-right: 10px;
 }
+
 .hamburger:hover .bar {
   opacity: 1;
 }
@@ -258,12 +284,15 @@ body:has([data-low-contrast]) .navbar {
   opacity: 0.8;
 }
 
-/* ===== Mobile dropdown ===== */
+/* =========================================================
+   MOBILE NAV DROPDOWN
+   ========================================================= */
+
 @media (max-width: 768px) {
   .nav-controls {
-    margin-left: auto;     /* pushes controls to the far right */
+    margin-left: auto;
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     align-items: center;
     gap: 10px;
   }
@@ -274,8 +303,10 @@ body:has([data-low-contrast]) .navbar {
     right: 0;
 
     min-width: 200px;
-    background: var(--surface-1);
+    padding: 0;
+    gap: 0;
 
+    background: var(--surface-1);
     border: 1px solid var(--border);
     border-radius: 8px;
     box-shadow: var(--shadow);
@@ -284,14 +315,11 @@ body:has([data-low-contrast]) .navbar {
     flex-direction: column;
     align-items: stretch;
 
-    padding: 0;
-    gap: 0;
-
-    /* animation */
     opacity: 0;
-    transform: translateY(-6px);
-    pointer-events: none;
     transform: translateY(-6px) scale(0.98);
+    pointer-events: none;
+
+    transition: opacity 0.2s ease, transform 0.2s ease;
   }
 
   .nav-menu.active {
@@ -300,7 +328,6 @@ body:has([data-low-contrast]) .navbar {
     pointer-events: auto;
   }
 
-  /* list rows */
   .nav-menu li {
     border-bottom: 1px solid var(--border);
   }
@@ -309,7 +336,6 @@ body:has([data-low-contrast]) .navbar {
     border-bottom: none;
   }
 
-  /* full-row clickable links */
   .nav-menu .nav-link {
     display: block;
     width: 100%;
@@ -328,7 +354,6 @@ body:has([data-low-contrast]) .navbar {
     background: rgba(255, 255, 255, 0.06);
   }
 
-  /* hamburger visible only on mobile */
   .hamburger {
     display: flex;
   }
