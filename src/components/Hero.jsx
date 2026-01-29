@@ -6,8 +6,8 @@ export default function Hero() {
     <section className="hero section" data-low-contrast id="home">
       {/* Atmospheric background layers */}
       <div className="hero-bg">
+        <div className="hero-canvas" />
         <div className="hero-noise" />
-        <div className="hero-atmosphere" />
       </div>
 
       <div className="hero-inner">
