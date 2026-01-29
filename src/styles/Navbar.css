@@ -213,28 +213,41 @@ body:has([data-low-contrast]) .navbar {
   cursor: pointer;
   margin-right: 6px;
 }
+.hamburger.active {
+  transform: translateX(1px);
+}
+
+.hamburger.active .bar {
+  opacity: 1;
+  height: 2.4px;
+}
 
 .hamburger:hover .bar {
   opacity: 1;
 }
 
 .hamburger.active .bar:nth-child(1) {
-  transform: rotate(45deg) translateY(8px);
+  transform: rotate(47deg) translate(6px, 8px);
 }
 
 .hamburger.active .bar:nth-child(2) {
   opacity: 0;
+  transform: scaleX(0);
 }
 
 .hamburger.active .bar:nth-child(3) {
-  transform: rotate(-45deg) translateY(-8px);
+  transform: rotate(-47deg) translate(6px, -8px);
 }
+
 
 .bar {
   width: 20px;
   height: 3px;
   background: var(--text);
   opacity: 0.8;
+  transition:
+    transform 0.28s cubic-bezier(.4, .0, .2, 1),
+    opacity 0.18s ease;
 }
 
 /* =========================================================
