@@ -65,7 +65,7 @@ function Navbar() {
   return (
     <nav className="navbar" ref={navbarRef}>
       <div className="navbar-inner">
-        <a href="#" className="logo">
+        <a href="#" id="logo" className="logo">
           <svg
             viewBox="0 0 1254 836"
             className="logo-svg"
@@ -148,9 +148,10 @@ function Navbar() {
             className="toggle-pill"
             onClick={toggleTheme}
             animate={{
-    backgroundColor: darkTheme
-      ? "var(--primary)"
-      : "var(--surface-2)" }}
+              backgroundColor: darkTheme
+                ? "var(--primary)"
+                : "var(--surface-2)",
+            }}
             transition={{ duration: 0.3 }}
           >
             <motion.div

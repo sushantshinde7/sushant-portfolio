@@ -51,8 +51,10 @@ body:has([data-low-contrast]) .navbar {
 }
 
 [data-theme="light"] .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.75);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.7) inset;
 }
 
 
@@ -184,44 +186,10 @@ body:has([data-low-contrast]) .navbar {
   cursor: pointer;
 }
 
-.theme-switch {
-  display: flex;
-  align-items: center;
-}
-
-.toggle-icons {
-  position: absolute;
-  inset: 0;
-  padding: 0 6px;
-
-  align-items: center;
-  pointer-events: none;
-}
-
+/* Icon inside the knob (single SVG at a time) */
 .toggle-icon {
   width: 11px;
   height: 11px;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-[data-theme="light"] .toggle-icon.sun {
-  opacity: 1;
-  transform: rotate(0deg) scale(1);
-}
-
-[data-theme="light"] .toggle-icon.moon {
-  opacity: 0;
-  transform: rotate(-90deg) scale(0.5);
-}
-
-[data-theme="dark"] .toggle-icon.moon {
-  opacity: 1;
-  transform: rotate(-180deg) scale(1);
-}
-
-[data-theme="dark"] .toggle-icon.sun {
-  opacity: 0;
-  transform: rotate(90deg) scale(0.5);
 }
 
 /* Toggle knob */
@@ -270,11 +238,23 @@ body:has([data-low-contrast]) .navbar {
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: 6px;
 }
 
 .hamburger:hover .bar {
   opacity: 1;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
 }
 
 .bar {
@@ -294,7 +274,7 @@ body:has([data-low-contrast]) .navbar {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
   }
 
   .nav-menu {
@@ -356,5 +336,6 @@ body:has([data-low-contrast]) .navbar {
 
   .hamburger {
     display: flex;
+    margin-right: 2px;
   }
 }
