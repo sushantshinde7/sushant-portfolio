@@ -170,9 +170,22 @@ body:has([data-low-contrast]) .navbar {
 
 /* Icon inside the knob (single SVG at a time) */
 .toggle-icon {
-  width: 11px;
-  height: 11px;
+  display: block;
+  color: var(--icon-color, currentColor);
 }
+
+/* Moon → bigger, heavier */
+.toggle-icon.moon {
+  width: 15px;
+  height: 15px;
+}
+
+/* Sun → slightly smaller, lighter */
+.toggle-icon.sun {
+  width: 12px;
+  height: 12px;
+}
+
 
 /* Toggle knob */
 .toggle-knob {

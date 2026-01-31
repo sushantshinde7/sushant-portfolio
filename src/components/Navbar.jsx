@@ -162,22 +162,21 @@ function Navbar() {
               {darkTheme ? (
                 /* Moon */
                 <svg
-                  className="toggle-icon"
+                  className="toggle-icon moon"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="3"
+                  strokeWidth="2.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   aria-hidden
                 >
-                  {" "}
-                  <path d="M21 12.79A9 9 0 1 1 11.21 3.9 5 5 0 0 0 21 11.79z" />{" "}
+                  <path d="M19 16A9 9 0 0 1 10.91 3.07a9 9 0 1 0 9.18 12.86A9.81 9.81 0 0 1 19 16Z" />
                 </svg>
               ) : (
                 /* Sun */
                 <svg
-                  className="toggle-icon"
+                  className="toggle-icon sun"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
