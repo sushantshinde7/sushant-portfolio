@@ -1,6 +1,15 @@
 /* ================================
    Contact Section — Surface
 ================================ */
+.contact-section *,
+.contact-section *::before,
+.contact-section *::after {
+  box-sizing: border-box;
+}
+
+.contact-grid > * {
+  min-width: 0;
+}
 
 .contact-section {
   position: relative;
@@ -109,7 +118,8 @@
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 0.7rem;
-
+  width: 100%;
+  max-width: 100%;
   color: var(--text);
 }
 
@@ -184,9 +194,15 @@
 
   font-weight: 500;
   color: var(--primary);
+
   padding-bottom: 2px;
   border-bottom: 1px dashed var(--border);
+
+  /* 🔑 mobile safety */
+  max-width: 100%;
+  word-break: break-all;
 }
+
 
 .direct-mail:hover {
   border-bottom-color: var(--primary);
@@ -250,5 +266,13 @@
   .contact-form,
   .contact-cta {
     padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
   }
 }
