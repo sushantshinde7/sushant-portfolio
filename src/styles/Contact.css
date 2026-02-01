@@ -307,6 +307,27 @@
   .contact-cta {
     padding: 2rem;
   }
+
+  .field input,
+  .field textarea {
+    padding: 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  .field {
+    margin-bottom: 1.4rem;
+  }
+
+  .contact-form .btn-primary {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .social-links a {
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+  }
 }
 
 @media (max-width: 480px) {
