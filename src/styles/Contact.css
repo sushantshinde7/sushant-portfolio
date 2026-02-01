@@ -78,6 +78,34 @@
     transform 0.2s ease;
 }
 
+.contact-form .field,
+.contact-form button,
+.contact-form .response-note {
+  opacity: 0;
+  animation: fieldFadeUp 0.45s ease forwards;
+}
+
+.contact-form .field:nth-child(1) { animation-delay: 0.05s; }
+.contact-form .field:nth-child(2) { animation-delay: 0.1s; }
+.contact-form .field:nth-child(3) { animation-delay: 0.15s; }
+
+.contact-form button {
+  animation-delay: 0.22s;
+}
+
+.contact-form .response-note {
+  animation-delay: 0.28s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-form .field,
+  .contact-form button,
+  .contact-form .response-note {
+    animation: none;
+    opacity: 1;
+  }
+}
+
 .contact-form:hover {
   box-shadow: var(--shadow);
   transform: translateY(-2px);
@@ -252,6 +280,18 @@
 .btn-primary,
 .btn-secondary {
   transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+@keyframes fieldFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ================================
