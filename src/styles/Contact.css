@@ -93,6 +93,10 @@
   animation-delay: 0.22s;
 }
 
+.contact-form .btn-primary {
+  align-self: flex-start;
+}
+
 .contact-form .response-note {
   animation-delay: 0.28s;
 }
@@ -342,6 +346,7 @@
     width: 100%;
     padding: 0.85rem 1rem;
     font-size: 0.95rem;
+    min-height: 44px; /* Apple HIG */
   }
 
   .social-links a {
