@@ -1,22 +1,27 @@
 /* ================================
-   Contact Section — Surface
+   Contact Section — Base & Reset
 ================================ */
-.contact-section *,
-.contact-section *::before,
-.contact-section *::after {
-  box-sizing: border-box;
-}
-
-.contact-grid > * {
-  min-width: 0;
-}
 
 .contact-section {
   position: relative;
   isolation: isolate;
 }
 
-/* Section background + blend to footer */
+.contact-section *,
+.contact-section *::before,
+.contact-section *::after {
+  box-sizing: border-box;
+}
+
+/* Prevent grid/flex overflow */
+.contact-grid > * {
+  min-width: 0;
+}
+
+/* ================================
+   Section Background
+================================ */
+
 #contact {
   background: linear-gradient(
     180deg,
@@ -26,7 +31,6 @@
   padding-bottom: 5rem;
 }
 
-/* Breathing gradient */
 #contact::before {
   content: "";
   position: absolute;
@@ -45,14 +49,9 @@
 }
 
 /* ================================
-   Inner Layout
+   Layout
 ================================ */
 
-.contact-inner {
-  display: block;
-}
-
-/* Grid that replaces contact-wrapper */
 .contact-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -60,60 +59,32 @@
 }
 
 /* ================================
-   LEFT — Contact Form
+   LEFT — Contact Form Card
 ================================ */
 
 .contact-form {
   background: var(--card-bg);
   border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2.5rem;
+
   box-shadow:
     var(--shadow),
     inset 0 1px 0 rgba(255,255,255,0.03);
-  border-radius: 12px;
 
-  padding: 2.5rem;
+  overflow: hidden;
 
   transition:
     box-shadow 0.2s ease,
     transform 0.2s ease;
 }
 
-.contact-form .field,
-.contact-form button,
-.contact-form .response-note {
-  opacity: 0;
-  animation: fieldFadeUp 0.45s ease forwards;
-}
-
-.contact-form .field:nth-child(1) { animation-delay: 0.05s; }
-.contact-form .field:nth-child(2) { animation-delay: 0.1s; }
-.contact-form .field:nth-child(3) { animation-delay: 0.15s; }
-
-.contact-form button {
-  animation-delay: 0.22s;
-}
-
-.contact-form .btn-primary {
-  align-self: flex-start;
-}
-
-.contact-form .response-note {
-  animation-delay: 0.28s;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .contact-form .field,
-  .contact-form button,
-  .contact-form .response-note {
-    animation: none;
-    opacity: 1;
-  }
-}
-
 .contact-form:hover {
   box-shadow: var(--shadow);
   transform: translateY(-2px);
 }
+
+/* Typography */
 
 .contact-form h2 {
   font-size: 2rem;
@@ -129,7 +100,9 @@
   margin-bottom: 1.8rem;
 }
 
-/* Form fields */
+/* ================================
+   Form Fields
+================================ */
 
 .field {
   display: flex;
@@ -146,12 +119,14 @@
 
 .field input,
 .field textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.7rem;
+
   background: var(--surface-bg);
   border: 1px solid var(--border);
   border-radius: 6px;
-  padding: 0.7rem;
-  width: 100%;
-  max-width: 100%;
+
   color: var(--text);
 }
 
@@ -167,6 +142,12 @@
   box-shadow: 0 0 0 1px rgba(99,102,241,0.15);
 }
 
+/* Submit & Note */
+
+.contact-form .btn-primary {
+  align-self: flex-start;
+}
+
 .response-note {
   display: block;
   margin-top: 1rem;
@@ -175,26 +156,58 @@
 }
 
 /* ================================
+   Form Entry Animations
+================================ */
+
+.contact-form .field,
+.contact-form button,
+.contact-form .response-note {
+  opacity: 0;
+  animation: fieldFadeUp 0.45s ease forwards;
+}
+
+.contact-form .field:nth-child(1) { animation-delay: 0.05s; }
+.contact-form .field:nth-child(2) { animation-delay: 0.1s; }
+.contact-form .field:nth-child(3) { animation-delay: 0.15s; }
+
+.contact-form button {
+  animation-delay: 0.22s;
+}
+
+.contact-form .response-note {
+  animation-delay: 0.28s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-form .field,
+  .contact-form button,
+  .contact-form .response-note {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* ================================
    RIGHT — CTA Card
 ================================ */
 
 .contact-cta {
-  background:
-    linear-gradient(
-      180deg,
-      var(--card-bg),
-      var(--surface-1)
-    );
+  background: linear-gradient(
+    180deg,
+    var(--card-bg),
+    var(--surface-1)
+  );
   border: 1px solid var(--border);
-  box-shadow: var(--shadow);
   border-radius: 12px;
-
   padding: 2rem;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1.2rem;
+
+  box-shadow: var(--shadow);
+  overflow: hidden;
 
   transition:
     box-shadow 0.2s ease,
@@ -205,6 +218,8 @@
   box-shadow: var(--shadow);
   transform: translateY(-2px);
 }
+
+/* Typography */
 
 .contact-cta h3 {
   font-size: 1.25rem;
@@ -218,17 +233,15 @@
   max-width: 38ch;
 }
 
-.cta-actions .btn {
-  flex-shrink: 0;
-}
-
-/* Direct mail */
+/* ================================
+   Direct Mail Link
+================================ */
 
 .direct-mail {
-  margin: 1.5rem 0;
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
+  margin: 1.5rem 0;
 
   font-weight: 500;
   color: var(--primary);
@@ -242,27 +255,30 @@
   word-break: break-word;
 }
 
-
 .direct-mail:hover {
   border-bottom-color: var(--primary);
 }
 
-/* CTA footer */
+/* ================================
+   CTA Actions & Social
+================================ */
 
 .cta-actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.75rem 1.2rem; /* row-gap | column-gap */
+  gap: 0.75rem 1.2rem;
 }
 
+.cta-actions .btn {
+  flex-shrink: 0;
+}
 
 .social-links {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
-
 
 .social-links a {
   max-width: 100%;
@@ -274,12 +290,15 @@
     transform 0.15s ease;
 }
 
-
 .social-links a:hover {
   color: var(--primary);
   background: var(--surface-2);
   transform: translateY(-2px);
 }
+
+/* ================================
+   Shared Button Motion
+================================ */
 
 .btn-primary,
 .btn-secondary {
@@ -293,11 +312,7 @@
   transform: translateY(-1px);
 }
 
-.contact-form,
-.contact-cta {
-  overflow: hidden;
-}
-
+/* Unified easing */
 .contact-form,
 .contact-cta,
 .social-links a,
@@ -306,6 +321,9 @@
   transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* ================================
+   Animations
+================================ */
 
 @keyframes fieldFadeUp {
   from {
@@ -332,21 +350,21 @@
     padding: 2rem;
   }
 
+  .field {
+    margin-bottom: 1.4rem;
+  }
+
   .field input,
   .field textarea {
     padding: 0.9rem;
     font-size: 0.95rem;
   }
 
-  .field {
-    margin-bottom: 1.4rem;
-  }
-
   .contact-form .btn-primary {
     width: 100%;
     padding: 0.85rem 1rem;
     font-size: 0.95rem;
-    min-height: 44px; /* Apple HIG */
+    min-height: 44px;
   }
 
   .social-links a {
@@ -366,3 +384,4 @@
     gap: 0.6rem;
   }
 }
+
