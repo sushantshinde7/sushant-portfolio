@@ -80,6 +80,14 @@
     saturate(1.18)   /* slightly down from 1.22 to avoid grey */
     contrast(1.04)
     hue-rotate(-1deg);
+
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+
+  /* 👇 MERGED transitions */
+  transition:
+    filter 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.15s linear;
 }
 
 .hero.is-settled .hero-canvas {
@@ -88,6 +96,7 @@
     contrast(0.98)
     hue-rotate(-1deg)
     blur(0.6px);
+  transform: translate3d(0, 6px, 0);
 }
 
 [data-theme="light"] .hero::before {

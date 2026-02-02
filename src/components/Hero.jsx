@@ -4,24 +4,50 @@ import { Github, Linkedin } from "lucide-react";
 
 export default function Hero() {
   useEffect(() => {
-    const hero = document.querySelector(".hero");
-    if (!hero) return;
+  const hero = document.querySelector(".hero");
+  const canvas = document.querySelector(".hero-canvas");
+  if (!hero || !canvas) return;
 
-    const handleScroll = () => {
-      const settlePoint = window.innerHeight * 0.25;
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
 
-      if (window.scrollY > settlePoint) {
-        hero.classList.add("is-settled");
-      } else {
-        hero.classList.remove("is-settled");
+  if (prefersReducedMotion) return;
+
+  let ticking = false;
+
+  const handleScroll = () => {
+    if (ticking) return;
+
+    window.requestAnimationFrame(() => {
+      const rect = hero.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+
+      /* Only animate while hero is visible */
+      if (rect.bottom > 0 && rect.top < viewportHeight) {
+        const progress = 1 - rect.top / viewportHeight;
+
+        /* VERY subtle drift */
+        const driftY = progress * 18; // px
+        const driftX = progress * 8;  // px
+
+        canvas.style.transform = `
+          translate3d(${driftX}px, ${driftY}px, 0)
+        `;
       }
-    };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
+      ticking = false;
+    });
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    ticking = true;
+  };
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  handleScroll();
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
 
   return (
     <section className="hero section" data-low-contrast id="home">
