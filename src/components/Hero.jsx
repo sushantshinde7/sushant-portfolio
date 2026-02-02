@@ -1,7 +1,28 @@
+import { useEffect } from "react";
 import "../styles/Hero.css";
 import { Github, Linkedin } from "lucide-react";
 
 export default function Hero() {
+  useEffect(() => {
+    const hero = document.querySelector(".hero");
+    if (!hero) return;
+
+    const handleScroll = () => {
+      const settlePoint = window.innerHeight * 0.25;
+
+      if (window.scrollY > settlePoint) {
+        hero.classList.add("is-settled");
+      } else {
+        hero.classList.remove("is-settled");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section className="hero section" data-low-contrast id="home">
       {/* Atmospheric background layers */}
@@ -11,7 +32,6 @@ export default function Hero() {
       </div>
 
       <div className="hero-inner">
-        {/* Content */}
         <div className="hero-content">
           <span className="hero-intro">Hi, I’m</span>
 
@@ -60,7 +80,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      {/* Scroll indicator */}
+
       <div className="scroll-indicator">
         <span className="scroll-dot" />
       </div>
