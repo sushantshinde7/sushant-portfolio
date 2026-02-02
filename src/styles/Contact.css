@@ -214,6 +214,10 @@
   max-width: 38ch;
 }
 
+.cta-actions .btn {
+  flex-shrink: 0;
+}
+
 /* Direct mail */
 
 .direct-mail {
@@ -243,10 +247,9 @@
 
 .cta-actions {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  align-items: center;
+  gap: 0.75rem 1.2rem; /* row-gap | column-gap */
 }
 
 
@@ -260,6 +263,7 @@
 .social-links a {
   max-width: 100%;
   white-space: nowrap;
+  margin-top: 0.8rem;
 
   transition:
     color 0.2s ease,
