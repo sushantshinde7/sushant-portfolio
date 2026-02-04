@@ -283,6 +283,20 @@ svg {
     padding: 0 2rem;
   }
   :root {
-    --section-tint: rgba(245, 210, 235, 0.28);
+    --section-tint: rgba(245, 210, 235, 0.30);
+    --section-tint-strong: rgba(235, 195, 255, 0.32);
+  }
+}
+
+@media (max-width: 768px) and (prefers-contrast: more) {
+  :root {
+    --section-tint: rgba(245, 210, 235, 0.20);
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --section-tint: rgba(245, 210, 235, 0.22);
+    --section-tint-strong: rgba(225, 190, 255, 0.26);
   }
 }
