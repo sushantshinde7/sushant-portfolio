@@ -300,3 +300,35 @@ svg {
     --section-tint-strong: rgba(225, 190, 255, 0.26);
   }
 }
+/* Screenshot & accessibility safe */
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --section-tint: rgb(246, 240, 244);
+    --section-tint-strong: rgb(236, 228, 234);
+  }
+}
+
+/* Forced colors (Windows / capture tools) */
+@media (forced-colors: active) {
+  :root {
+    --section-tint: rgb(248, 245, 247);
+    --section-tint-strong: rgb(242, 238, 242);
+  }
+}
+
+/* Print */
+@media print {
+  :root {
+    --section-tint: rgb(250, 248, 249);
+    --section-tint-strong: rgb(240, 236, 238);
+  }
+
+  .section {
+    background: var(--section-tint) !important;
+  }
+
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}
