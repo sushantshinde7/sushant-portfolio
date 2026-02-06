@@ -145,7 +145,7 @@
   flex-direction: column;
   align-items: center;
   gap: 0.65rem;
-
+  width: auto;        /* already good */
   padding: 0.9rem 0.4rem;
   border-radius: 12px;
 
@@ -163,6 +163,12 @@
   font-size: 28px;
   opacity: 0.9;
   transition: opacity 0.2s ease;
+}
+
+/* subtle visual compensation */
+.skill-icon[data-optical="light"] {
+  transform: scale(1.1);
+  opacity: 0.95;
 }
 
 .skill-item:hover .skill-icon {
