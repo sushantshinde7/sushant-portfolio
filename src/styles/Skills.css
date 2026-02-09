@@ -156,6 +156,8 @@
 
 .skill-item {
   display: flex;
+  position: relative;
+  background: transparent;
   flex-direction: column;
   align-items: center;
   gap: 0.55rem;
@@ -167,9 +169,39 @@
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
+.skill-item::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 12px;
+  pointer-events: none;
+
+  background: linear-gradient(
+    180deg,
+    rgba(79, 70, 229, 0.12),
+    rgba(79, 70, 229, 0.04)
+  );
+
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.skill-item:hover::after {
+  opacity: 1;
+}
+
 .skill-item:hover {
-  transform: translateY(-1.5px);
-  background: var(--surface-2);
+  transform: translateY(-2px);
+}
+
+.skill-item:hover .skill-icon {
+  opacity: 1;
+  transform: translateY(-0.5px) scale(var(--optical-scale, 1));
+}
+
+.skill-item:hover .skill-name {
+  color: var(--text);
+  opacity: 0.95;
 }
 
 /* Icon */
@@ -240,6 +272,12 @@
     grid-template-columns: repeat(auto-fit, 110px);
     justify-content: start;
     gap: 1.2rem;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .skill-item:hover {
+    background: rgba(255, 255, 255, 0.45);
   }
 }
 
