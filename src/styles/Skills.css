@@ -204,6 +204,22 @@
   opacity: 0.95;
 }
 
+.skill-item:focus-visible {
+  outline: none;
+
+  background: var(--surface-2);
+  box-shadow:
+    0 0 0 2px rgba(79, 70, 229, 0.25),
+    0 6px 16px rgba(0, 0, 0, 0.06);
+
+  transform: translateY(-1px);
+}
+
+.skill-item:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
 /* Icon */
 .skill-icon {
   font-size: 30px; /* was 28px */
@@ -284,4 +300,11 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .skill-item,
+  .skills-section-block {
+    transition: none;
+    transform: none;
+  }
+}
 

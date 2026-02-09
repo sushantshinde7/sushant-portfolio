@@ -66,7 +66,7 @@ const sectionFade = {
 const staggerContainer = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.12 },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
@@ -77,9 +77,15 @@ function SkillSection({ title, skills }) {
     <motion.div className="skills-section-block" variants={sectionFade}>
       <h3 className="skills-title">{title}</h3>
 
-      <div className="skills-grid">
+      <div className="skills-grid" role="list">
         {skills.map(({ name, icon: Icon, logoType }) => (
-          <div className="skill-item" key={name}>
+          <div
+            className="skill-item"
+            key={name}
+            role="listitem"
+            tabIndex={0}
+            aria-label={name}
+          >
             <Icon className="skill-icon" data-logo={logoType} />
             <span className="skill-name">{name}</span>
           </div>
