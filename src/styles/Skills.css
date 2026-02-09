@@ -177,7 +177,21 @@
   font-size: 30px; /* was 28px */
   opacity: 0.95;
   line-height: 1;
+  --optical-scale: 1;
+  transform: scale(var(--optical-scale));
   transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+
+/* Thin / low-density */
+.skill-icon[data-logo="mysql"] {
+  --optical-scale: 1.2;
+  opacity: 1;
+}
+
+/* Long wordmark */
+.skill-icon[data-logo="github-pages"] {
+  --optical-scale: 1.74;
 }
 
 /* subtle visual compensation */
@@ -188,6 +202,7 @@
 
 .skill-item:hover .skill-icon {
   opacity: 1;
+  transform: translateY(-0.5px) scale(var(--optical-scale));
 }
 
 /* Label */

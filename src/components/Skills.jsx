@@ -39,7 +39,7 @@ const webProgrammingSkills = [
   { name: "Node.js", icon: SiNodedotjs },
   { name: "npm", icon: SiNpm },
   { name: "Python", icon: SiPython },
-  { name: "MySQL", icon: SiMysql },
+  { name: "MySQL", icon: SiMysql, logoType: "mysql" },
   { name: "Firebase", icon: SiFirebase },
 ];
 
@@ -49,7 +49,7 @@ const toolsSkills = [
   { name: "Vite", icon: SiVite },
   { name: "Figma", icon: SiFigma },
   { name: "Vercel", icon: SiVercel },
-  { name: "GitHub Pages", icon: SiGithubpages },
+  { name: "GitHub Pages", icon: SiGithubpages, logoType: "github-pages" },
 ];
 
 /* ---------------- motion ---------------- */
@@ -74,16 +74,13 @@ const staggerContainer = {
 
 function SkillSection({ title, skills }) {
   return (
-    <motion.div
-      className="skills-section-block"
-      variants={sectionFade}
-    >
+    <motion.div className="skills-section-block" variants={sectionFade}>
       <h3 className="skills-title">{title}</h3>
 
       <div className="skills-grid">
-        {skills.map(({ name, icon: Icon }) => (
+        {skills.map(({ name, icon: Icon, logoType }) => (
           <div className="skill-item" key={name}>
-            <Icon className="skill-icon" />
+            <Icon className="skill-icon" data-logo={logoType} />
             <span className="skill-name">{name}</span>
           </div>
         ))}
@@ -124,4 +121,3 @@ export default function Skills() {
     </section>
   );
 }
-
