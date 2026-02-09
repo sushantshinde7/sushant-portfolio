@@ -88,7 +88,7 @@
 .skills-sections {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* LOCAL spacing between cards */
+  gap: clamp(1.75rem, 4vh, 2.25rem);
 }
 
 /* =========================
@@ -98,7 +98,7 @@
 .skills-section-block {
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: 1.25rem;
 
   width: 100%; /* card never controls gutters */
   padding: 1.6rem 1.4rem;
@@ -272,6 +272,9 @@
     grid-template-columns: repeat(auto-fit, 110px);
     justify-content: start;
     gap: 1.2rem;
+  }
+  .skills-section-block {
+    padding: 1.6rem 1.4rem;
   }
 }
 
