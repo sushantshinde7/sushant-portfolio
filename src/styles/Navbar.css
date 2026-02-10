@@ -337,7 +337,7 @@ body:has([data-low-contrast]) .navbar {
     position: absolute;
     top: calc(100% + 6px);
     right: 0;
-    min-width: 200px;
+    width: clamp(160px, 70vw, 190px);
     padding: 0;
     gap: 0;
     background: var(--surface-1);
@@ -388,5 +388,11 @@ body:has([data-low-contrast]) .navbar {
   .hamburger {
     display: flex;
     margin-right: 2px;
+  }
+}
+@media (max-width: 360px) {
+  .nav-menu .nav-link {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.65rem;
   }
 }
