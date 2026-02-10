@@ -5,9 +5,13 @@
 .navbar {
   position: fixed;
   top: 0;
-  left: 5vw;
-  width: 90vw;
+  left: calc(5vw + env(safe-area-inset-left));
+  width: calc(
+    90vw - env(safe-area-inset-left) - env(safe-area-inset-right)
+  );
+
   z-index: 1000;
+  padding-top: env(safe-area-inset-top);
   background: rgba(255, 255, 255, 0.42);
   border-bottom: 1px solid var(--border);
   border-radius: 0 0 10px 10px;
@@ -259,37 +263,41 @@ body:has([data-low-contrast]) .navbar {
 /* =========================================================
    HAMBURGER
    ========================================================= */
+/* =========================================================
+   HAMBURGER (button reset + touch target)
+   ========================================================= */
 .hamburger {
+  /* layout */
   display: none;
   flex-direction: column;
   gap: 5px;
-  cursor: pointer;
-  margin-right: 6px;
-
-  min-width: 36px;
-  min-height: 36px;
-  display: flex;
   align-items: center;
   justify-content: center;
-}
-.hamburger.active {
-  transform: translateX(1px);
-}
-/* Button reset — hamburger only */
-.hamburger {
+
+  /* touch target */
+  min-width: 36px;
+  min-height: 36px;
+  margin-right: 6px;
+
+  /* button reset */
   appearance: none;
   -webkit-appearance: none;
   background: transparent;
   border: none;
   padding: 0;
-  margin: 0;
   font: inherit;
   color: inherit;
   line-height: 1;
+  cursor: pointer;
 
-  /* Mobile tap */
+  /* mobile tap polish */
   -webkit-tap-highlight-color: transparent;
 }
+
+.hamburger.active {
+  transform: translateX(1px);
+}
+
 
 .hamburger.active .bar {
   opacity: 1;
@@ -367,8 +375,9 @@ body:has([data-low-contrast]) .navbar {
     position: absolute;
     top: calc(100% + 6px);
     right: 0;
-    width: clamp(160px, 70vw, 190px);
-    padding: 0;
+    width: clamp(160px, 70vw, 180px);
+    padding-bottom: calc(0.05rem + env(safe-area-inset-bottom));
+    padding-top: calc(0.05rem + env(safe-area-inset-top));
     gap: 0;
     background: var(--surface-1);
     border: 1px solid var(--border);
