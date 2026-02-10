@@ -43,6 +43,31 @@ function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close menu on ESC key (keyboard accessibility)
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setMenuActive(false);
+      }
+    };
+
+    if (menuActive) {
+      document.addEventListener("keydown", onKeyDown);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [menuActive]);
+
+  // Auto-focus first nav link when menu opens
+  useEffect(() => {
+    if (menuActive) {
+      const firstLink = document.querySelector(".nav-menu.active .nav-link");
+      firstLink?.focus();
+    }
+  }, [menuActive]);
+
   // Close menu on outside click
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -83,7 +108,10 @@ function Navbar() {
         </a>
 
         {/* ===== Navigation menu ===== */}
-        <ul className={`nav-menu ${menuActive ? "active" : ""}`}>
+        <ul
+          id="mobile-menu"
+          className={`nav-menu ${menuActive ? "active" : ""}`}
+        >
           <li>
             <a
               className="nav-link"
@@ -199,15 +227,17 @@ function Navbar() {
             </motion.div>
           </motion.div>
 
-          <div
+          <button
             className={`hamburger ${menuActive ? "active" : ""}`}
             onClick={toggleMenu}
-            aria-label="Menu"
+            aria-label="Open navigation menu"
+            aria-expanded={menuActive}
+            aria-controls="mobile-menu"
           >
             <span className="bar"></span>
             <span className="bar"></span>
             <span className="bar"></span>
-          </div>
+          </button>
         </div>
       </div>
     </nav>
