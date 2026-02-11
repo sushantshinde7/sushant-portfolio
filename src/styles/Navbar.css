@@ -398,6 +398,10 @@ body:has([data-low-contrast]) .navbar {
     align-items: stretch;
     gap: 0;
 
+    max-height: min(420px, calc(100dvh - var(--nav-height) - 20px));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
     border-radius: 10px;
     border: 1px solid var(--border);
 
@@ -456,10 +460,11 @@ body:has([data-low-contrast]) .navbar {
   .nav-menu .nav-link {
     display: block;
     width: 100%;
-    padding: 0.7rem 1rem;
+    padding: 0.55rem 1rem;
     font-size: 0.7rem;
     font-weight: 300;
     color: var(--text);
+    line-height: 1.4;
   }
 
   .nav-menu .nav-link:hover {
