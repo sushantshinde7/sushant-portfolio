@@ -6,24 +6,24 @@
   position: fixed;
   top: 0;
   left: calc(5vw + env(safe-area-inset-left));
-  width: calc(
-    90vw - env(safe-area-inset-left) - env(safe-area-inset-right)
-  );
+  width: calc(90vw - env(safe-area-inset-left) - env(safe-area-inset-right));
 
   z-index: 1000;
   padding-top: env(safe-area-inset-top);
   background: linear-gradient(
-  to bottom,
-  rgba(255, 255, 255, 0.65),
-  rgba(240, 248, 255, 0.45)
-);
+    to bottom,
+    rgba(255, 255, 255, 0.65),
+    rgba(240, 248, 255, 0.45)
+  );
 
   border-bottom: 1px solid var(--border);
   border-radius: 0 0 10px 10px;
   box-shadow:
     0 8px 24px rgba(0, 0, 0, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.5);
-  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+  transition:
+    background 0.3s ease,
+    backdrop-filter 0.3s ease;
 }
 
 /* Dark fallback */
@@ -35,17 +35,18 @@
 }
 
 /* Glass support */
-@supports ((backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))) {
+@supports (
+  (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))
+) {
   .navbar {
-  background: rgba(240, 248, 255, 0.52); /* cool icy tone */
-  backdrop-filter: blur(12px) saturate(120%);
-  -webkit-backdrop-filter: blur(12px) saturate(120%);
-}
+    background: rgba(240, 248, 255, 0.52); /* cool icy tone */
+    backdrop-filter: blur(12px) saturate(120%);
+    -webkit-backdrop-filter: blur(12px) saturate(120%);
+  }
 
   [data-theme="dark"] .navbar {
-  background: rgba(0, 0, 0, 0.30); /* was 0.38 */
-}
-
+    background: rgba(0, 0, 0, 0.3); /* was 0.38 */
+  }
 }
 
 /* Hero-visible low contrast state */
@@ -65,8 +66,9 @@ body:has([data-low-contrast]) .navbar {
 
 [data-theme="light"] .navbar.scrolled {
   background: rgba(255, 255, 255, 0.45);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08),
-              0 1px 0 rgba(255, 255, 255, 0.7) inset;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.7) inset;
 }
 
 /* =========================================================
@@ -117,7 +119,6 @@ body:has([data-low-contrast]) .navbar {
 [data-theme="dark"] .logo-svg {
   filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.05));
 }
-
 
 /* =========================================================
    DESKTOP NAV MENU
@@ -194,7 +195,7 @@ body:has([data-low-contrast]) .navbar {
   box-shadow:
     inset 0 1px 2px rgba(0, 0, 0, 0.12),
     inset 0 -1px 1px rgba(255, 255, 255, 0.7),
-    inset 0 0 0 rgba(0,0,0,0.08); /* keeps edge soft */
+    inset 0 0 0 rgba(0, 0, 0, 0.08); /* keeps edge soft */
 }
 
 [data-theme="dark"] .toggle-pill {
@@ -220,7 +221,6 @@ body:has([data-low-contrast]) .navbar {
   height: 12px;
 }
 
-
 /* Toggle knob */
 .toggle-knob {
   position: absolute;
@@ -235,7 +235,9 @@ body:has([data-low-contrast]) .navbar {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: left 0.35s ease, transform 0.35s ease;
+  transition:
+    left 0.35s ease,
+    transform 0.35s ease;
 }
 
 [data-theme="light"] .toggle-knob {
@@ -251,26 +253,21 @@ body:has([data-low-contrast]) .navbar {
   -webkit-backdrop-filter: blur(6px);
 
   box-shadow:
-    0 6px 14px rgba(0, 0, 0, 0.14), /* lift */
-    0 1px 2px rgba(0, 0, 0, 0.08);  /* contact */
+    0 6px 14px rgba(0, 0, 0, 0.14),
+    /* lift */ 0 1px 2px rgba(0, 0, 0, 0.08); /* contact */
 }
-
-
 
 [data-theme="light"] .toggle-pill:active .toggle-knob {
   transform: scale(0.96);
-  box-shadow:
-    0 2px 6px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
 }
 
 [data-theme="dark"] .toggle-knob {
   left: 25px;
   top: 1px;
   background: var(--surface-1);
-  box-shadow:
-    0 2px 6px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
-
 
 /* =========================================================
    HAMBURGER
@@ -310,19 +307,11 @@ body:has([data-low-contrast]) .navbar {
   transform: translateX(1px);
 }
 
-
 .hamburger.active .bar {
   opacity: 1;
   height: 2.5px;
   filter: brightness(1.05);
-  clip-path: polygon(
-    0% 50%,
-    5% 0%,
-    97% 0%,
-    100% 50%,
-    97% 100%,
-    5% 100%
-  );
+  clip-path: polygon(0% 50%, 5% 0%, 97% 0%, 100% 50%, 97% 100%, 5% 100%);
 }
 
 .hamburger:hover .bar {
@@ -342,7 +331,6 @@ body:has([data-low-contrast]) .navbar {
   transform: rotate(-47deg) translate(6px, -7.5px);
 }
 
-
 .nav-link:focus-visible,
 .hamburger:focus-visible,
 .toggle-pill:focus-visible {
@@ -351,22 +339,14 @@ body:has([data-low-contrast]) .navbar {
   border-radius: 6px;
 }
 
-
 .bar {
   width: 20px;
   height: 3px;
   background: var(--text);
   opacity: 0.8;
-  clip-path: polygon(
-    0% 50%,
-    4% 0%,
-    94% 0%,
-    100% 50%,
-    94% 100%,
-    4% 100%
-  );
+  clip-path: polygon(0% 50%, 4% 0%, 94% 0%, 100% 50%, 94% 100%, 4% 100%);
   transition:
-    transform 0.28s cubic-bezier(.4, .0, .2, 1),
+    transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.18s ease;
 }
 
@@ -387,21 +367,52 @@ body:has([data-low-contrast]) .navbar {
     position: absolute;
     top: calc(100% + 6px);
     right: 0;
+
     width: clamp(160px, 70vw, 180px);
+
     padding-bottom: calc(0.05rem + env(safe-area-inset-bottom));
     padding-top: calc(0.05rem + env(safe-area-inset-top));
-    gap: 0;
-    background: var(--surface-1);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    box-shadow: var(--shadow);
+
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    gap: 0;
+
+    border-radius: 10px;
+    border: 1px solid var(--border);
+
+    /* Fallback */
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.75),
+      rgba(240, 248, 255, 0.65)
+    );
+
+    box-shadow:
+      0 12px 30px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
     opacity: 0;
     transform: translateY(-6px) scale(0.98);
     pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition:
+      opacity 0.22s ease,
+      transform 0.22s ease,
+      backdrop-filter 0.3s ease;
+  }
+
+  @supports (
+    (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))
+  ) {
+    .nav-menu {
+      background: rgba(240, 248, 255, 0.55);
+      backdrop-filter: blur(14px) saturate(125%);
+      -webkit-backdrop-filter: blur(14px) saturate(125%);
+    }
+
+    [data-theme="dark"] .nav-menu {
+      background: rgba(0, 0, 0, 0.35);
+    }
   }
 
   .nav-menu.active {
@@ -411,7 +422,11 @@ body:has([data-low-contrast]) .navbar {
   }
 
   .nav-menu li {
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  [data-theme="dark"] .nav-menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   .nav-menu li:last-child {
