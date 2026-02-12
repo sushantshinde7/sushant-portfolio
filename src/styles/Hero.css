@@ -114,6 +114,33 @@
   z-index: 0;
 }
 
+
+[data-theme="dark"] .hero-canvas {
+  position: absolute;
+  inset: -35%;
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      120% 80% at 45% -10%,
+      rgba(99, 102, 241, 0.35),
+      rgba(79, 70, 229, 0.25) 40%,
+      transparent 70%
+    ),
+    radial-gradient(
+      70% 50% at 80% 40%,
+      rgba(168, 85, 247, 0.25),
+      transparent 70%
+    ),
+    radial-gradient(
+      90% 70% at 75% 85%,
+      rgba(236, 72, 153, 0.22),
+      transparent 75%
+    );
+
+  filter: saturate(1.1) contrast(1.05);
+}
+
 /* ===== Subtle noise ===== */
 .hero-noise {
   position: absolute;
@@ -275,16 +302,15 @@
 }
 
 /* ===== Blend with next section ===== */
-.hero::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 140px;
-  background: linear-gradient(to bottom, transparent, var(--content-bg));
-  pointer-events: none;
+[data-theme="dark"] .hero::after {
+  background: linear-gradient(
+    to bottom,
+    transparent 20%,
+    rgba(17, 22, 35, 0.6) 60%,
+    var(--content-bg)
+  );
 }
+
 
 @media (max-width: 768px) {
   [data-theme="light"] .hero-canvas {

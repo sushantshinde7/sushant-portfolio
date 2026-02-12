@@ -80,13 +80,10 @@ html {
 /* -------- DARK MODE -------- */
 [data-theme="dark"] {
   /* Canvas */
-  --app-bg: #000000;
-
-  /* Main readable column */
-  --content-bg: #141414;
-
-  /* Surface */
-  --surface-bg: #1a1a1a;
+  --app-bg: #0b0f18; /* deep blue-black */
+  --content-bg: #111623; /* slightly lifted */
+  --surface-bg: #151b2b;
+  --card-bg: #161c2d;
 
   /* Footer */
   --footer-bg: #0d0d0d;
@@ -95,7 +92,6 @@ html {
   --dot-color: rgba(255, 255, 255, 0.22);
 
   /* Card & subtle surfaces */
-  --card-bg: #1a1a1a;
   --surface-1: #1a1a1a;
   --surface-2: #232323;
 
@@ -115,8 +111,8 @@ html {
   --border: rgba(255, 255, 255, 0.08);
 
   /* Section transitions */
-  --section-tint: rgba(129, 140, 248, 0.08);
-  --section-tint-strong: rgba(129, 140, 248, 0.16);
+  --section-tint: rgba(255, 255, 255, 0.02);
+  --section-tint-strong: rgba(255, 255, 255, 0.035);
 
   /* Effects */
   --shadow: 0 1px 0 rgba(255, 255, 255, 0.04), 0 12px 28px rgba(0, 0, 0, 0.9);
@@ -240,8 +236,23 @@ svg {
 
 /* -------- DARK MODE APP SHELL LOCK -------- */
 [data-theme="dark"] .app-shell {
-  background-image: radial-gradient(var(--dot-color) 1.5px, transparent 1.2px);
-  background-size: 20px 20px;
+  background-image:
+    radial-gradient(
+      1000px 600px at 15% -10%,
+      rgba(99, 102, 241, 0.18),
+      transparent 65%
+    ),
+    radial-gradient(
+      800px 500px at 85% 0%,
+      rgba(168, 85, 247, 0.14),
+      transparent 70%
+    ),
+    radial-gradient(var(--dot-color) 1.5px, transparent 1.2px);
+
+  background-size:
+    auto,
+    auto,
+    20px 20px;
 }
 
 .content-container {
@@ -264,6 +275,14 @@ svg {
 .section {
   padding: var(--section-y-padding) 0;
   position: relative;
+}
+
+[data-theme="dark"] .section {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--section-tint)
+  );
 }
 
 .section-inner {
