@@ -80,10 +80,11 @@ html {
 /* -------- DARK MODE -------- */
 [data-theme="dark"] {
   /* Canvas */
-  --app-bg: #0b0f18; /* deep blue-black */
-  --content-bg: #111623; /* slightly lifted */
-  --surface-bg: #151b2b;
-  --card-bg: #161c2d;
+  --app-bg: #0c111c;        /* deep blue-black */
+--content-bg: #111623;    /* stable neutral column */
+--surface-bg: #151b2b;    /* surface base */
+--card-bg: #161c2d;       /* isolated card */
+
 
   /* Footer */
   --footer-bg: #0d0d0d;
@@ -239,13 +240,13 @@ svg {
   background-image:
     radial-gradient(
       1000px 600px at 15% -10%,
-      rgba(99, 102, 241, 0.18),
-      transparent 65%
+      rgba(99, 102, 241, 0.10),
+      transparent 70%
     ),
     radial-gradient(
       800px 500px at 85% 0%,
-      rgba(168, 85, 247, 0.14),
-      transparent 70%
+      rgba(168, 85, 247, 0.08),
+      transparent 75%
     ),
     radial-gradient(var(--dot-color) 1.5px, transparent 1.2px);
 
@@ -262,7 +263,7 @@ svg {
 
   border-left: 1px solid var(--border);
   border-right: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.9);
 
   min-height: 100vh;
   display: flex;
@@ -278,12 +279,15 @@ svg {
 }
 
 [data-theme="dark"] .section {
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    var(--section-tint)
-  );
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      var(--section-tint) 50%,
+      transparent 100%
+    );
 }
+
 
 .section-inner {
   max-width: 1200px;
