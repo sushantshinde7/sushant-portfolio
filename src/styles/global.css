@@ -65,7 +65,6 @@ html {
   --atmo-lavender: rgba(210, 190, 255, 0.48);
 
   --scroll-accent: rgba(190, 170, 255, 0.45);
-  --scroll-dot: rgba(170, 150, 255, 0.75);
 
   --scroll-track: rgba(160, 130, 255, 0.45);
   --scroll-dot: rgba(130, 100, 255, 0.95);
@@ -263,12 +262,21 @@ svg {
 
   border-left: 1px solid var(--border);
   border-right: 1px solid var(--border);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.9);
+
 
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
+
+:root .content-container {
+  box-shadow: var(--shadow);
+}
+
+[data-theme="dark"] .content-container {
+  box-shadow: var(--shadow);
+}
+
 .main-content {
   flex: 1;
 }
@@ -305,7 +313,7 @@ svg {
   .content-container {
     padding: 0 2rem;
   }
-  :root {
+  :root:not([data-theme="dark"]) {
     --section-tint: rgba(245, 210, 235, 0.30);
     --section-tint-strong: rgba(235, 195, 255, 0.32);
   }
