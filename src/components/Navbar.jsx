@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 function Navbar() {
   const [menuActive, setMenuActive] = useState(false);
+  const [openedWithKeyboard, setOpenedWithKeyboard] = useState(false);
   const [darkTheme, setDarkTheme] = useState(false);
   const navbarRef = useRef(null);
 
@@ -62,11 +63,11 @@ function Navbar() {
 
   // Auto-focus first nav link when menu opens
   useEffect(() => {
-    if (menuActive) {
+    if (menuActive && openedWithKeyboard) {
       const firstLink = document.querySelector(".nav-menu.active .nav-link");
       firstLink?.focus();
     }
-  }, [menuActive]);
+  }, [menuActive, openedWithKeyboard]);
 
   // Close menu on outside click
   useEffect(() => {
@@ -229,7 +230,10 @@ function Navbar() {
 
           <button
             className={`hamburger ${menuActive ? "active" : ""}`}
-            onClick={toggleMenu}
+            onClick={(e) => {
+              setOpenedWithKeyboard(e.detail === 0);
+              toggleMenu();
+            }}
             aria-label="Open navigation menu"
             aria-expanded={menuActive}
             aria-controls="mobile-menu"

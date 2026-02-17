@@ -89,6 +89,12 @@ body:has([data-low-contrast]) .navbar {
   align-self: center;
 }
 
+
+button:focus,
+a:focus {
+  outline: none;
+}
+
 /* =========================================================
    LOGO
    ========================================================= */
