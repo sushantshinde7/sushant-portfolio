@@ -372,6 +372,7 @@ body:has([data-low-contrast]) .navbar {
    ========================================================= */
 
 @media (max-width: 768px) {
+
   .nav-controls {
     margin-left: auto;
     display: flex;
@@ -413,13 +414,15 @@ body:has([data-low-contrast]) .navbar {
       0 12px 30px rgba(0, 0, 0, 0.1),
       inset 0 1px 0 rgba(255, 255, 255, 0.6);
 
+    /* ===== NEW MOTION SYSTEM ===== */
+    transform-origin: top right;
+    transform: scale(0.96) translateY(-2px);
     opacity: 0;
-    transform: translateY(-6px) scale(0.98);
     pointer-events: none;
+
     transition:
-      opacity 0.22s ease,
-      transform 0.22s ease,
-      backdrop-filter 0.3s ease;
+      transform 220ms cubic-bezier(.22,.61,.36,1),
+      opacity 180ms ease;
   }
 
   @supports (
@@ -437,10 +440,12 @@ body:has([data-low-contrast]) .navbar {
   }
 
   .nav-menu.active {
+    transform: scale(1) translateY(0);
     opacity: 1;
-    transform: translateY(0);
     pointer-events: auto;
   }
+
+  /* --- Rest remains unchanged --- */
 
   .nav-menu li {
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -452,10 +457,6 @@ body:has([data-low-contrast]) .navbar {
 
   [data-theme="dark"] .nav-menu li {
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  }
-
-  .nav-menu li:last-child {
-    border-bottom: none;
   }
 
   .nav-menu .nav-link {
@@ -478,7 +479,7 @@ body:has([data-low-contrast]) .navbar {
   }
 
   .nav-menu .btn {
-    border-radius: 0; /* remove pill */
+    border-radius: 0;
     background: transparent;
     backdrop-filter: none;
     box-shadow: none;
@@ -486,17 +487,17 @@ body:has([data-low-contrast]) .navbar {
     font-weight: 500;
     color: var(--accent);
   }
-  
+
   [data-theme="light"] .nav-menu .btn:hover {
-  background: rgba(0, 0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.05);
   }
-  
+
   [data-theme="dark"] .nav-menu .btn:hover {
-  background: rgba(255, 255, 255, 0.06);
-}
+    background: rgba(255, 255, 255, 0.06);
+  }
 
   .nav-menu li:last-child .btn {
-    border-radius: 0 0 10px 10px; /* match menu */
+    border-radius: 0 0 10px 10px;
   }
 
   .hamburger {
