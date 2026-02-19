@@ -68,7 +68,18 @@
   border: 1px solid var(--border);
   box-shadow: 0 1px 0 rgba(0,0,0,0.04),
               0 18px 40px rgba(0,0,0,0.08);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 
+}
+
+.about-box:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.06),
+    0 28px 60px rgba(0,0,0,0.12);
 }
 
 /* Main reading card */
@@ -80,6 +91,14 @@
   box-shadow:
     0 1px 0 rgba(255,255,255,0.03),
     0 30px 60px rgba(0,0,0,0.55);
+}
+
+[data-theme="dark"] .about-box:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.04),
+    0 40px 80px rgba(0,0,0,0.75);
 }
 
 /* =========================
