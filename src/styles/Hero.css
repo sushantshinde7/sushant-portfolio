@@ -227,31 +227,53 @@
 ========================= */
 
 .hero-content {
-  max-width: 700px;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
 }
 
+
 .hero-intro {
-  font-size: 0.9rem;
-  opacity: 0.7;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+  color: var(--text-soft, var(--text-muted));
 }
 
 .hero-name {
-  font-size: clamp(3.5rem, 6vw, 5rem);
+  font-size: clamp(3.8rem, 6vw, 5.4rem);
   font-weight: 700;
-  letter-spacing: 0.015em;
-  margin: 0.2rem 0;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--heading, var(--text));
 }
 
 .hero-role {
-  font-size: 1.6rem;
+  font-size: 1.55rem;
   font-weight: 500;
-  opacity: 0.85;
+  letter-spacing: -0.01em;
+  color: var(--text-muted);
 }
 
 .hero-description {
-  margin-top: 1rem;
-  line-height: 1.6;
-  opacity: 0.8;
+  margin-top: 0.5rem;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  max-width: 640px;
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .hero-description {
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .hero-role {
+  color: #cfcfd6; /* slightly brighter than muted */
+}
+[data-theme="dark"] .hero-name {
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
 /* =========================
@@ -259,10 +281,12 @@
 ========================= */
 
 .hero-cta {
-  margin-top: 2rem;
+  margin-top: 1.8rem;
   display: flex;
-  gap: 1rem;
+  gap: 1.1rem;
+  flex-wrap: wrap;
 }
+
 
 .hero-socials {
   margin-top: 1.5rem;
@@ -271,12 +295,13 @@
 }
 
 .hero-socials a {
-  opacity: 0.7;
-  transition: opacity 0.2s ease;
+  color: var(--text-soft, var(--text-muted));
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .hero-socials a:hover {
-  opacity: 1;
+  color: var(--primary);
+  transform: translateY(-2px);
 }
 
 
