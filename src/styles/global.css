@@ -49,8 +49,7 @@ html {
   --surface-2: #f3f0ff; /* hover / subtle elevation */
 
   --section-tint: rgba(255, 220, 210, 0.24);
---section-tint-strong: rgba(255, 210, 235, 0.28);
-
+  --section-tint-strong: rgba(255, 210, 235, 0.28);
 
   /* Layout */
   --nav-height: 57px;
@@ -79,10 +78,10 @@ html {
 /* -------- DARK MODE -------- */
 [data-theme="dark"] {
   /* ===== CANVAS (Neutral Charcoal) ===== */
-  --app-bg: #121315;          /* neutral charcoal */
-  --content-bg: #17181b;      /* stable reading column */
-  --surface-bg: #1c1d21;      /* navbar / surfaces */
-  --card-bg: #1f2024;         /* cards – slightly lifted */
+  --app-bg: #121315; /* neutral charcoal */
+  --content-bg: #17181b; /* stable reading column */
+  --surface-bg: #1c1d21; /* navbar / surfaces */
+  --card-bg: #1f2024; /* cards – slightly lifted */
 
   /* Footer */
   --footer-bg: #141518;
@@ -90,9 +89,11 @@ html {
   /* Texture */
   --dot-color: rgba(255, 255, 255, 0.18);
 
-  /* ===== TEXT (Reduced glare) ===== */
-  --text: #e8e8ea;
-  --text-muted: #a8a8b0;
+  /* ===== TEXT (Refined for Reading Comfort) ===== */
+  --text: #f1f1f2; /* Primary reading text */
+  --text-muted: #b2b2ba; /* Secondary paragraph text */
+  --text-soft: #8e8e96; /* Metadata / small UI text */
+  --heading: #ffffff; /* Headings slightly brighter */
 
   /* ===== SURFACES ===== */
   --surface-1: #202126;
@@ -110,8 +111,7 @@ html {
   --section-tint-strong: rgba(255, 255, 255, 0.025);
 
   /* ===== SHADOW (Less contrast punch) ===== */
-  --shadow: 0 1px 0 rgba(255, 255, 255, 0.03),
-            0 10px 24px rgba(0, 0, 0, 0.6);
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.03), 0 10px 24px rgba(0, 0, 0, 0.6);
 
   /* ===== Scroll accents (Muted) ===== */
   --scroll-track: rgba(180, 180, 200, 0.25);
@@ -119,7 +119,6 @@ html {
   --scroll-glow: rgba(180, 180, 220, 0.25);
   --scroll-accent: rgba(180, 180, 220, 0.25);
 }
-
 
 :root {
   /* Horizontal rhythm */
@@ -139,6 +138,21 @@ body {
   background: var(--app-bg);
   color: var(--text);
   font-family: var(--font-ui);
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+
+h1, h2, h3, h4 {
+  color: var(--heading, var(--text));
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+p {
+  font-size: 1.02rem;
 }
 
 /* =========================
@@ -256,7 +270,6 @@ svg {
     20px 20px;
 }
 
-
 .content-container {
   grid-column: 2;
   background: var(--content-bg);
@@ -264,7 +277,6 @@ svg {
 
   border-left: 1px solid var(--border);
   border-right: 1px solid var(--border);
-
 
   min-height: 100vh;
   display: flex;
@@ -289,15 +301,13 @@ svg {
 }
 
 [data-theme="dark"] .section {
-  background:
-    linear-gradient(
-      to bottom,
-      transparent 0%,
-      var(--section-tint) 50%,
-      transparent 100%
-    );
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--section-tint) 50%,
+    transparent 100%
+  );
 }
-
 
 .section-inner {
   max-width: 1200px;
@@ -316,14 +326,14 @@ svg {
     padding: 0 2rem;
   }
   :root:not([data-theme="dark"]) {
-    --section-tint: rgba(245, 210, 235, 0.30);
+    --section-tint: rgba(245, 210, 235, 0.3);
     --section-tint-strong: rgba(235, 195, 255, 0.32);
   }
 }
 
 @media (max-width: 768px) and (prefers-contrast: more) {
   :root {
-    --section-tint: rgba(245, 210, 235, 0.20);
+    --section-tint: rgba(245, 210, 235, 0.2);
   }
 }
 
