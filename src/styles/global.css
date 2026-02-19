@@ -78,47 +78,48 @@ html {
 
 /* -------- DARK MODE -------- */
 [data-theme="dark"] {
-  /* Canvas */
-  --app-bg: #0c111c;        /* deep blue-black */
---content-bg: #111623;    /* stable neutral column */
---surface-bg: #151b2b;    /* surface base */
---card-bg: #161c2d;       /* isolated card */
-
+  /* ===== CANVAS (Neutral Charcoal) ===== */
+  --app-bg: #121315;          /* neutral charcoal */
+  --content-bg: #17181b;      /* stable reading column */
+  --surface-bg: #1c1d21;      /* navbar / surfaces */
+  --card-bg: #1f2024;         /* cards – slightly lifted */
 
   /* Footer */
-  --footer-bg: #0d0d0d;
+  --footer-bg: #141518;
 
   /* Texture */
-  --dot-color: rgba(255, 255, 255, 0.22);
+  --dot-color: rgba(255, 255, 255, 0.18);
 
-  /* Card & subtle surfaces */
-  --surface-1: #1a1a1a;
-  --surface-2: #232323;
+  /* ===== TEXT (Reduced glare) ===== */
+  --text: #e8e8ea;
+  --text-muted: #a8a8b0;
 
-  /* Text */
-  --text: #f5f5f5;
-  --text-muted: #bdbdbd;
+  /* ===== SURFACES ===== */
+  --surface-1: #202126;
+  --surface-2: #26272d;
 
-  --scroll-track: rgba(140, 159, 255, 0.356);
-  --scroll-dot: rgba(190, 210, 255, 0.9);
-  --scroll-glow: rgba(140, 160, 255, 0.45);
+  /* ===== BRAND (Desaturated Indigo) ===== */
+  --primary: #9a9ff8; /* softer, less electric */
+  --accent-soft: rgba(154, 159, 248, 0.16);
 
-  --scroll-accent: rgba(130, 150, 255, 0.35);
-  --scroll-dot: rgba(160, 180, 255, 0.85);
+  /* Borders */
+  --border: rgba(255, 255, 255, 0.06);
 
-  /* UI */
-  --primary: #818cf8;
-  --border: rgba(255, 255, 255, 0.08);
+  /* ===== SECTION TINT (Very subtle depth) ===== */
+  --section-tint: rgba(255, 255, 255, 0.015);
+  --section-tint-strong: rgba(255, 255, 255, 0.025);
 
-  /* Section transitions */
-  --section-tint: rgba(255, 255, 255, 0.02);
-  --section-tint-strong: rgba(255, 255, 255, 0.035);
+  /* ===== SHADOW (Less contrast punch) ===== */
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.03),
+            0 10px 24px rgba(0, 0, 0, 0.6);
 
-  /* Effects */
-  --shadow: 0 1px 0 rgba(255, 255, 255, 0.04), 0 12px 28px rgba(0, 0, 0, 0.9);
-
-  --accent-soft: rgba(129, 140, 248, 0.18); /* dark */
+  /* ===== Scroll accents (Muted) ===== */
+  --scroll-track: rgba(180, 180, 200, 0.25);
+  --scroll-dot: rgba(210, 210, 230, 0.75);
+  --scroll-glow: rgba(180, 180, 220, 0.25);
+  --scroll-accent: rgba(180, 180, 220, 0.25);
 }
+
 
 :root {
   /* Horizontal rhythm */
@@ -238,13 +239,13 @@ svg {
 [data-theme="dark"] .app-shell {
   background-image:
     radial-gradient(
-      1000px 600px at 15% -10%,
-      rgba(99, 102, 241, 0.10),
+      900px 500px at 20% -10%,
+      rgba(255, 255, 255, 0.04),
       transparent 70%
     ),
     radial-gradient(
-      800px 500px at 85% 0%,
-      rgba(168, 85, 247, 0.08),
+      700px 400px at 80% 0%,
+      rgba(255, 255, 255, 0.03),
       transparent 75%
     ),
     radial-gradient(var(--dot-color) 1.5px, transparent 1.2px);
@@ -254,6 +255,7 @@ svg {
     auto,
     20px 20px;
 }
+
 
 .content-container {
   grid-column: 2;
