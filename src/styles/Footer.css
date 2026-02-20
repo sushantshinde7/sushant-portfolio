@@ -1,13 +1,12 @@
 .footer {
   grid-column: 2;
   margin-top: -10px; /* match border radius overlap */
-  padding: 1.8rem 0.75rem;
+  padding: 1.5rem 0.75rem;
   position: relative;
   z-index: 2;
   background: var(--footer-bg);
   border-top: 1px solid var(--border);
   border-radius: 10px 10px 0 0;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
 }
 
 .footer-inner {
@@ -61,13 +60,13 @@
   padding: 8px;
   border: 1px solid var(--border);
   border-radius: 50%;
-  background: var(--surface-1);
+  background: var(--card-bg);
 }
 
 .footer-right a:hover {
   color: var(--primary);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
 }
 
 /* RESPONSIVE */
