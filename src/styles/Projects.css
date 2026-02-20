@@ -73,17 +73,21 @@
 }
 
 .content-text h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: clamp(1.85rem, 2vw, 2.1rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
   color: var(--text);
-  text-shadow: 0 1px 0 rgba(0,0,0,0.15);
 }
 
+
 .content-text p {
+  font-size: 0.95rem;
+  line-height: 1.6;
   color: var(--text-muted);
   max-width: 60ch;
   margin-inline: auto;
 }
+
 
 /* ================================
    Projects List (vertical rhythm)
@@ -96,24 +100,6 @@
   gap: 2rem; /* vertical spacing ONLY */
 }
 
-.projects-list::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-
-  width: 1px;
-  background: linear-gradient(
-    180deg,
-    transparent,
-    var(--border),
-    transparent
-  );
-
-  opacity: 0.15;
-  pointer-events: none;
-}
 /* ================================
    Projects CTA
 ================================ */
