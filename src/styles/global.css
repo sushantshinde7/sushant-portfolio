@@ -266,12 +266,28 @@ svg {
       rgba(255, 255, 255, 0.03),
       transparent 75%
     ),
-    radial-gradient(var(--dot-color) 1.5px, transparent 1.2px);
+    radial-gradient(var(--dot-color) 1.5px, transparent 1.2px),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.025) 0px,
+      rgba(255,255,255,0.025) 1px,
+      transparent 1px,
+      transparent 2px
+    ),
+    linear-gradient(
+      to right,
+      rgba(0,0,0,0.35) 0%,
+      transparent 8%,
+      transparent 92%,
+      rgba(0,0,0,0.35) 100%
+    );
 
   background-size:
     auto,
     auto,
-    20px 20px;
+    20px 20px,
+    auto,
+    auto;
 }
 
 .content-container {
