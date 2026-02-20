@@ -74,7 +74,12 @@ const staggerContainer = {
 
 function SkillSection({ title, skills }) {
   return (
-    <motion.div className="skills-section-block" variants={sectionFade}>
+    <motion.div
+      className="skills-section-block"
+      variants={sectionFade}
+      whileHover={{ y: -6 }}
+      transition={{ type: "tween", duration: 0.25 }}
+    >
       <h3 className="skills-title">{title}</h3>
 
       <div className="skills-grid" role="list">

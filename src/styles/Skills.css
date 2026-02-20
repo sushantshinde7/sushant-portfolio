@@ -31,12 +31,7 @@
   height: 1px;
   margin-top: 1.5rem;
 
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--border),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
   opacity: 0.35;
 }
 
@@ -88,7 +83,7 @@
 .skills-sections {
   display: flex;
   flex-direction: column;
-  gap: clamp(1.75rem, 4vh, 2.25rem);
+  gap: clamp(2.2rem, 5vh, 2.8rem);
 }
 
 /* =========================
@@ -113,15 +108,22 @@
     border-color 0.25s ease;
 }
 
-.skills-section-block:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 6px 18px rgba(0, 0, 0, 0.06),
-    0 2px 6px rgba(0, 0, 0, 0.04);
+[data-theme="dark"] .skills-section-block {
+  background: #121212;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: none;
 
-  border-color: rgba(79, 70, 229, 0.18); /* subtle brand hint */
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease;
 }
 
+[data-theme="dark"] .skills-section-block:hover {
+
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.04),
+    0 16px 32px rgba(0, 0, 0, 0.55);
+}
 
 /* =========================
    Section Title
@@ -133,12 +135,10 @@
   font-family: monospace;
   color: var(--text);
   letter-spacing: 0.4px;
-  
+
   text-transform: uppercase;
   position: relative;
 }
-
-
 
 /* =========================
    Skills Grid
@@ -161,12 +161,14 @@
   flex-direction: column;
   align-items: center;
   gap: 0.55rem;
-  width: auto;        /* already good */
+  width: auto; /* already good */
   padding: 0.9rem 0.4rem;
   border-radius: 12px;
 
   background: transparent;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
 }
 
 .skill-item::after {
@@ -175,21 +177,21 @@
   inset: -1px;
   border-radius: 12px;
   pointer-events: none;
-
-  background: linear-gradient(
-    180deg,
-    rgba(79, 70, 229, 0.12),
-    rgba(79, 70, 229, 0.04)
-  );
-
   opacity: 0;
   transition: opacity 0.2s ease;
+}
+
+[data-theme="dark"] .skill-item::after {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.01)
+  );
 }
 
 .skill-item:hover::after {
   opacity: 1;
 }
-
 
 .skill-item:hover .skill-icon {
   opacity: 1;
@@ -206,7 +208,7 @@
 
   background: var(--surface-2);
   box-shadow:
-    0 0 0 2px rgba(79, 70, 229, 0.25),
+    0 0 0 2px rgba(255, 255, 255, 0.12),
     0 6px 16px rgba(0, 0, 0, 0.06);
 
   transform: translateY(-1px);
@@ -228,9 +230,10 @@
   line-height: 1;
   --optical-scale: 1;
   transform: scale(var(--optical-scale));
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
-
 
 /* Thin / low-density */
 .skill-icon[data-logo="mysql"] {
@@ -312,4 +315,3 @@
     transform: none;
   }
 }
-
