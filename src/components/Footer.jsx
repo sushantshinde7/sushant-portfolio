@@ -11,7 +11,13 @@ function Footer() {
         <div className="footer-left">
           <p className="footer-line">
             Designed and built with{" "}
-            <Heart size={14} className="footer-heart" /> by Sushant Shinde
+            <Heart
+              size={14}
+              className="footer-heart"
+              fill="currentColor"
+              strokeWidth={0}
+            />{" "}
+            by Sushant Shinde
           </p>
           <p className="footer-copy">
             © {year} Sushant Shinde. All rights reserved.
@@ -44,5 +50,3 @@ function Footer() {
 }
 
 export default Footer;
-
-
