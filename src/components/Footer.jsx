@@ -10,17 +10,22 @@ function Footer() {
         {/* Left */}
         <div className="footer-left">
           <p className="footer-line">
-  Designed & built with{" "}
-  <Heart
-    size={14}
-    className="footer-heart"
-    fill="currentColor"
-    strokeWidth={0}
-  />{" "}
-  by Sushant Shinde
-  <span className="footer-sep" aria-hidden="true">•</span>
-  <span className="footer-role">Frontend Developer</span>
-</p>
+            <span className="footer-main">
+              Designed & built with{" "}
+              <Heart
+                size={14}
+                className="footer-heart"
+                fill="currentColor"
+                strokeWidth={0}
+              />{" "}
+              by Sushant Shinde
+            </span>
+
+            <span className="footer-meta">
+              <span className="footer-sep">•</span>
+              <span className="footer-role">Frontend Developer</span>
+            </span>
+          </p>
           <p className="footer-copy">
             © {year} Sushant Shinde. All rights reserved.
           </p>

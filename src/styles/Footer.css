@@ -30,12 +30,22 @@
   display: flex;
   align-items: center;
   gap: 0.35rem;
+  flex-wrap: wrap; /* allow clean wrapping */
   font-size: 0.875rem; /* consistent body-small */
   font-weight: 500;
   color: var(--text);
   line-height: 1.5;
   letter-spacing: -0.01em;
 }
+
+.footer-main,
+.footer-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap; /* prevent internal breaking */
+}
+
 .footer-sep {
   margin: 0 0.5rem;
   color: var(--text-muted);
@@ -95,5 +105,11 @@
 
   .footer {
     padding: 1.2rem 0; /* was 1.8rem */
+  }
+}
+@media (max-width: 480px) {
+  .footer-line {
+    flex-direction: column;
+    gap: 0.2rem;
   }
 }
