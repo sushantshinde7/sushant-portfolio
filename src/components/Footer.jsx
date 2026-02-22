@@ -23,7 +23,11 @@ function Footer() {
 
             <span className="footer-meta">
               <span className="footer-sep">•</span>
-              <span className="footer-role">Frontend Developer</span>
+
+              <span className="footer-role">
+                <span className="role-full">Frontend Developer</span>
+                <span className="role-short">Frontend Dev</span>
+              </span>
             </span>
           </p>
           <p className="footer-copy">
