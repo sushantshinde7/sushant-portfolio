@@ -74,7 +74,12 @@
 }
 
 .footer-heart {
-  color: #e11d48; /* subtle red, works in both themes */
+  color: #e11d48;
+  transition: transform 0.25s ease;
+}
+
+.footer-heart:hover {
+  transform: scale(1.15);
 }
 
 .footer-copy {
