@@ -1,7 +1,7 @@
 .footer {
   grid-column: 2;
   margin-top: -10px; /* match border radius overlap */
-  padding: 1.5rem 0.75rem;
+  padding: clamp(1rem, 2vw, 1.5rem) 0.75rem;
   position: relative;
   z-index: 2;
   background: var(--footer-bg);
@@ -31,7 +31,7 @@
   align-items: center;
   gap: 0.35rem;
   flex-wrap: nowrap; /* allow wrapping as block */
-  font-size: 0.875rem;
+  font-size: clamp(0.8rem, 0.75rem + 0.3vw, 0.875rem);
   font-weight: 500;
   color: var(--text);
   line-height: 1.5;
@@ -118,6 +118,10 @@
 
   .role-short {
     display: inline;
+  }
+
+  .footer-line {
+    letter-spacing: -0.015em;
   }
 }
 
