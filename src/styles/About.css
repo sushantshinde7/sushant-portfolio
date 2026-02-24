@@ -123,15 +123,15 @@
 ========================= */
 
 .about-content {
-  padding: 2.25rem 2.75rem;
+  padding: 2.6rem 1.95rem 2.2rem;
   max-width: 48.75rem; /* 780px → 48.75rem */
 }
 
 .about-title {
   font-size: clamp(1.9rem, 1.5vw, 2.2rem);
-  font-weight: 600;
+  font-weight: 650;
   letter-spacing: -0.02em;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.9rem;
 }
 
 .about-content p { 
