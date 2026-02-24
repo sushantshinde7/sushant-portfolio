@@ -107,7 +107,7 @@
 
 .about-visual {
   position: relative;
-  min-height: 420px;
+  height: 100%;
 
   background: var(--surface-2);
 
@@ -123,21 +123,21 @@
 ========================= */
 
 .about-content {
-  padding: 3.5rem;
-  max-width: 620px;
+  padding: 2.25rem 2.75rem;
+  max-width: 780px;
 }
 
 .about-title {
-  font-size: 2.2rem;
+  font-size: clamp(1.9rem, 1.5vw, 2.2rem);
   font-weight: 600;
   letter-spacing: -0.02em;
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.2rem;
 }
 
 
-.about-content p {
-  margin-bottom: 1rem;
-  line-height: 1.75;
+.about-content p { 
+  font-size: 1rem;
+  line-height: 1.7;
   color: var(--text-muted);
 }
 
