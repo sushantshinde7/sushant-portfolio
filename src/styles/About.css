@@ -123,8 +123,8 @@
 ========================= */
 
 .about-content {
-  padding: 2.6rem 1.95rem 2.2rem;
-  max-width: 48.75rem; /* 780px → 48.75rem */
+  padding: 2.5rem 1.3rem 2rem 2.1rem ;
+  max-width: 47rem; /* 780px → 48.75rem */
 }
 
 .about-title {
@@ -138,8 +138,8 @@
   font-size: 1rem;
   line-height: 1.7;
   color: var(--text-muted);
-  max-width: 75ch;
-  text-align: justify;
+  max-width: 68ch;
+  text-align: left;
   text-wrap: pretty;
 }
 
@@ -178,6 +178,10 @@
   .about-content {
     grid-row: 1;
     padding: 2.5rem;
+  }
+
+  .about-content p {
+    text-align: left;
   }
 
   .about-visual {
