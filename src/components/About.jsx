@@ -1,15 +1,51 @@
+import { motion } from "framer-motion";
 import "../styles/About.css";
+
+const containerVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+      staggerChildren: 0.12
+    }
+  }
+};
+
+const childVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" }
+  }
+};
 
 export default function About() {
   return (
     <section id="about" className="about-container section">
       <div className="section-inner about-inner">
-        <div className="about-box">
+        <motion.div
+          className="about-box"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
           {/* Left visual block */}
-          <div className="about-visual" aria-hidden />
+          <motion.div
+            className="about-visual"
+            aria-hidden
+            variants={childVariants}
+          />
 
           {/* Right content */}
-          <div className="about-content">
+          <motion.div
+            className="about-content"
+            variants={childVariants}
+          >
             <h2 className="about-title">About Me</h2>
 
             <p>
@@ -34,8 +70,8 @@ export default function About() {
               contribute to real-world products, collaborate within a
               development team, and grow into a strong front-end engineer.
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
