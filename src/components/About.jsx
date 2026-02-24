@@ -1,26 +1,22 @@
 import { motion } from "framer-motion";
 import "../styles/About.css";
 
-const containerVariants = {
-  hidden: { opacity: 0, y: 24 },
+/* ---------------- motion (aligned with Skills) ---------------- */
+
+const sectionFade = {
+  hidden: { opacity: 0, y: 16 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-      staggerChildren: 0.12
-    }
-  }
+    transition: { duration: 0.4, ease: "easeOut" },
+  },
 };
 
-const childVariants = {
-  hidden: { opacity: 0, y: 20 },
+const staggerContainer = {
+  hidden: {},
   visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" }
-  }
+    transition: { staggerChildren: 0.1 },
+  },
 };
 
 export default function About() {
@@ -29,22 +25,24 @@ export default function About() {
       <div className="section-inner about-inner">
         <motion.div
           className="about-box"
-          variants={containerVariants}
+          variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          whileHover={{ y: -6 }}
+          transition={{ type: "tween", duration: 0.25 }}
+          viewport={{ once: true, margin: "-80px" }}
         >
           {/* Left visual block */}
           <motion.div
             className="about-visual"
             aria-hidden
-            variants={childVariants}
+            variants={sectionFade}
           />
 
           {/* Right content */}
           <motion.div
             className="about-content"
-            variants={childVariants}
+            variants={sectionFade}
           >
             <h2 className="about-title">About Me</h2>
 
