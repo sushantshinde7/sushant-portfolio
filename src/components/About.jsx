@@ -13,20 +13,26 @@ export default function About() {
             <h2 className="about-title">About Me</h2>
 
             <p>
-              I’m a Computer Engineering graduate and front-end developer focused
-              on building clean, scalable, and user-friendly interfaces.
+              I’m a Computer Engineering graduate and front-end developer
+              focused on building responsive, user-centric web applications with
+              React and modern JavaScript. I value clean component architecture,
+              maintainable code, and scalable UI systems that remain consistent
+              as applications grow.
             </p>
 
             <p>
-              I enjoy working at the intersection of design and engineering —
-              structuring components thoughtfully, refining UX details, and
-              improving interfaces through iteration.
+              Through projects like productivity apps, modular PWAs, and
+              API-driven interfaces, I’ve gained experience with state
+              management, reusable components, authentication, and offline
+              support. I focus on clean layouts, clear interaction feedback, and
+              performance so applications feel smooth and dependable.
             </p>
 
             <p>
-              Currently, I’m expanding into full-stack development while
-              deepening my expertise in React, UI architecture, and modern
-              front-end workflows.
+              I’m currently strengthening my backend fundamentals while
+              deepening my React expertise. I’m seeking an opportunity to
+              contribute to real-world products, collaborate within a
+              development team, and grow into a strong front-end engineer.
             </p>
           </div>
         </div>
