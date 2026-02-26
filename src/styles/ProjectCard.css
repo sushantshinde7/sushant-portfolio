@@ -4,13 +4,12 @@
 
 .project-card {
   display: grid;
-  grid-template-columns: 35% 65%;
+  grid-template-columns: 1fr;   /* default vertical */
   position: relative;
   width: 100%;
   min-height: 260px;
 
   border-radius: 16px;
-
   background: var(--card-bg);
   border: 1px solid var(--border);
 
@@ -21,7 +20,7 @@
     box-shadow 0.28s ease,
     border-color 0.28s ease;
 
-  overflow: hidden; /* IMPORTANT — allows edge-to-edge visual */
+  overflow: hidden;
 }
 
 /* Reverse layout */
@@ -229,6 +228,28 @@
     font-size: 0.94rem;
     line-height: 1.7;
     max-width: 60ch;
+  }
+}
+/* =========================================
+   Desktop Mode — Same As Navbar
+   Navbar switches after 768px
+========================================= */
+
+@media (min-width: 769px) {
+  .project-card {
+    grid-template-columns: 35% 65%;
+  }
+
+  .project-card.reverse {
+    grid-template-columns: 65% 35%;
+  }
+
+  .project-card.reverse .project-visual {
+    order: 2;
+  }
+
+  .project-card.reverse .project-content {
+    order: 1;
   }
 }
 
