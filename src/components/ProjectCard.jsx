@@ -7,10 +7,11 @@ function ProjectCard({
   description,
   tags,
   github,
-  live
+  live,
+  reverse = false
 }) {
   return (
-    <article className="project-card">
+    <article className={`project-card ${reverse ? "reverse" : ""}`}>
       {/* LEFT — Visual */}
       <div className="project-visual">
         <span className="visual-label">{label}</span>
@@ -31,7 +32,9 @@ function ProjectCard({
           </div>
         </header>
 
-        <p className="project-description" lang="en">{description}</p>
+        <p className="project-description" lang="en">
+          {description}
+        </p>
 
         <ul className="project-tags">
           {tags.map((tag, i) => (
