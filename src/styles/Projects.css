@@ -97,7 +97,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  gap: 2rem; /* vertical spacing ONLY */
+  gap: 2.6rem; /* vertical spacing ONLY */
 }
 
 /* ================================
@@ -148,4 +148,10 @@
 
 .btn-projects:hover svg {
   transform: translateX(3px);
+}
+
+@media (min-width: 769px) {
+  .projects-list {
+    gap: 2.6rem;
+  }
 }
