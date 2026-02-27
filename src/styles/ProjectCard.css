@@ -270,7 +270,12 @@
   .project-card.reverse {
     grid-template-columns: 1fr;
   }
-
+  
+  /* 👇 ADD THIS — cancel order changes */
+  .project-card.reverse .project-visual,
+  .project-card.reverse .project-content {
+    order: initial;
+  }
   .project-visual {
     min-height: 220px;
   }

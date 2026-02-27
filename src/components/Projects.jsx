@@ -74,6 +74,7 @@ function Projects() {
               tags={project.tags}
               github={project.github}
               live={project.live}
+              reverse={index % 2 !== 0}   // 👈 ADD THIS
             />
           ))}
         </div>
