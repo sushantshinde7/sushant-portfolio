@@ -48,25 +48,27 @@ export default function About() {
 
             <p>
               I’m a Computer Engineering graduate and front-end developer
-              focused on building responsive, user-centric web applications with
-              React and modern JavaScript. I value clean component architecture,
-              maintainable code, and scalable UI systems that remain consistent
-              as applications grow.
+              focused on building responsive, user-centric web applications
+              using React and modern JavaScript. I value clean component
+              architecture, scalable UI systems, and writing maintainable code
+              that supports long-term product growth.
             </p>
 
             <p>
-              Through projects like productivity apps, modular PWAs, and
-              API-driven interfaces, I’ve gained experience with state
-              management, reusable components, authentication, and offline
-              support. I focus on clean layouts, clear interaction feedback, and
-              performance so applications feel smooth and dependable.
+              Through projects including productivity tools, modular PWAs,
+              and API-driven platforms, I’ve worked with state management,
+              authentication flows, reusable architecture, and offline
+              capabilities. I pay close attention to layout structure,
+              interaction feedback, and performance to ensure applications
+              feel smooth, reliable, and intuitive.
             </p>
 
             <p>
-              I’m currently strengthening my backend fundamentals while
-              deepening my React expertise. I’m seeking an opportunity to
-              contribute to real-world products, collaborate within a
-              development team, and grow into a strong front-end engineer.
+              I’m currently deepening my React expertise while strengthening
+              backend fundamentals to better understand full-stack systems.
+              I’m seeking an opportunity to contribute to real-world
+              products, collaborate within a development team, and continue
+              growing into a strong front-end engineer.
             </p>
           </motion.div>
         </motion.div>
