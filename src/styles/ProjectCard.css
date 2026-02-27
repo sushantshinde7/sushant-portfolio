@@ -238,6 +238,7 @@
 @media (min-width: 769px) {
   .project-card {
     grid-template-columns: 35% 65%;
+    min-height: 300px;   /* 👈 increase desktop height */
   }
 
   .project-card.reverse {
@@ -250,6 +251,14 @@
 
   .project-card.reverse .project-content {
     order: 1;
+  }
+
+  .project-content {
+    padding: 2rem;
+  }
+
+  .project-visual {
+    padding: 2rem;
   }
 }
 
