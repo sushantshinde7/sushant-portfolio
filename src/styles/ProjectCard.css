@@ -225,10 +225,12 @@
 
 @media (max-width: 1024px) {
   .project-description {
-    font-size: 0.94rem;
-    line-height: 1.7;
-    max-width: 60ch;
-  }
+  font-size: 0.96rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  max-width: 70ch;
+  text-wrap: pretty; /* modern browsers */   /* 👈 allow full column width */
+}
 }
 /* =========================================
    Desktop Mode — Same As Navbar

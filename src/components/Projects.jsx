@@ -8,7 +8,7 @@ function Projects() {
       title: "React Time Tools",
       label: "Time Utilities",
       description:
-        "A production-grade React application combining Alarm, Timer, Stopwatch, and World Clock into a single, fast, and offline-ready interface. Focused on state persistence, performance optimization, and clean UX across complex time-based logic.",
+        "A production-grade time management application built with React and Vite, combining Alarm, Timer, Stopwatch, and World Clock into a unified, offline-ready interface. Implements centralized state management with Context API, precise time calculations, repeat scheduling, and persistent settings via LocalStorage — designed for performance, reliability, and clean UX across complex time-based interactions.",
       tags: [
         "React",
         "Vite",
@@ -24,7 +24,7 @@ function Projects() {
       title: "Modular To-Do PWA",
       label: "Productivity",
       description:
-        "A fully modular to-do application built with vanilla JavaScript using ES Modules. Features smart task management, smooth animations, offline PWA support, and persistent state via LocalStorage — designed with a strong focus on UX and performance.",
+        "A modular, offline-capable to-do application built with vanilla JavaScript using ES Modules for scalable architecture. Supports task CRUD operations, pinning, filters, animated UI feedback, and installable PWA functionality with LocalStorage persistence — focused on accessibility, performance, and structured code organization.",
       tags: [
         "JavaScript (ES Modules)",
         "PWA",
@@ -40,7 +40,7 @@ function Projects() {
       title: "Netflix Clone",
       label: "Media Platform",
       description:
-        "A Netflix-inspired streaming platform built with React, Firebase Authentication, and the TMDB API. Includes secure auth flows, protected routes, dynamic content fetching, and a fully responsive, production-style UI.",
+        "A Netflix-inspired streaming interface built with React, Firebase Authentication, and the TMDB API. Implements secure authentication flows, protected routes, dynamic content fetching, and route-based navigation with reusable components — delivering a responsive, production-style UI that mirrors real-world streaming platforms.",
       tags: [
         "React",
         "Firebase Auth",
@@ -74,7 +74,7 @@ function Projects() {
               tags={project.tags}
               github={project.github}
               live={project.live}
-              reverse={index % 2 !== 0}   // 👈 ADD THIS
+              reverse={index % 2 !== 0} // 👈 ADD THIS
             />
           ))}
         </div>
