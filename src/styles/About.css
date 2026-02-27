@@ -38,20 +38,23 @@
   );
 }
 
-/* IMPORTANT:
-   No bottom divider here
-   → allows smooth About → Skills blending */
 /* =========================
    ABOUT – INNER SPACING
+   (Aligned with Projects rhythm system)
 ========================= */
 
+.about-inner {
+  display: flex;
+  justify-content: center;
+}
 
-/* Desktop */
+/* Desktop spacing stays same */
 @media (min-width: 1024px) {
   .about-inner {
     padding: 3.5rem 2rem;
   }
 }
+
 /* =========================
    ABOUT – BOX
 ========================= */
@@ -61,11 +64,12 @@
   grid-template-columns: 30% 1fr;
   gap: 0;
 
+  width: 100%;
+  max-width: 1100px;      /* same concept as project-card width control */
+  margin: 0 auto;
+
   background: var(--surface-1);
   border-radius: 24px;
-  width: 100%;
-  max-width: 1100px;      /* 👈 controls total card width */
-  margin: 0 auto;         /* 👈 center it */
   border: 1px solid var(--border);
 
   box-shadow: none;
@@ -77,26 +81,21 @@
     border-color 0.28s ease;
 }
 
-
 .about-box:hover {
-
   box-shadow:
     0 4px 12px rgba(0,0,0,0.06),
     0 28px 60px rgba(0,0,0,0.12);
 }
 
-/* Main reading card */
+/* Dark mode */
 [data-theme="dark"] .about-box {
   background: #121212;
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 28px;
-
-  box-shadow: none;
 }
 
 [data-theme="dark"] .about-box:hover {
   transform: translateY(-2px);
-
   box-shadow:
     0 1px 0 rgba(255,255,255,0.04),
     0 18px 36px rgba(0,0,0,0.55);
@@ -109,33 +108,36 @@
 .about-visual {
   position: relative;
   height: 100%;
-
   background: var(--surface-2);
-
   border-right: 1px solid var(--border);
 }
+
 [data-theme="dark"] .about-visual {
   background: #171717;
-  box-shadow: none;
 }
 
 /* =========================
-   CONTENT
+   CONTENT (Rhythm Controlled)
 ========================= */
 
 .about-content {
   padding: 1.5rem 2rem 1.2rem;
-  max-width: 47rem; /* 780px → 48.75rem */
+  max-width: 47rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem; /* replaces paragraph margin rhythm */
 }
 
 .about-title {
   font-size: clamp(1.9rem, 1.5vw, 2.2rem);
   font-weight: 650;
   letter-spacing: -0.02em;
-  margin-bottom: 0.9rem;
+  margin: 0; /* remove margin-based rhythm */
 }
 
-.about-content p { 
+.about-content p {
+  margin: 0; /* remove margin stacking */
   font-size: 1rem;
   line-height: 1.7;
   color: var(--text-muted);
@@ -175,7 +177,6 @@
 }
 
 @media (max-width: 768px) {
-
   .about-content {
     padding: 1.5rem;
   }
