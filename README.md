@@ -17,6 +17,8 @@ Personal portfolio website built using React and Vite. The project contains stru
 
 ## Tech Stack Used
 
+- HTML 
+- JavaScript 
 - React  
 - Vite  
 - CSS (modular & centralized styling)
