@@ -152,7 +152,7 @@
 .project-actions a {
   color: var(--text-muted);
   position: relative;
-  transition: color 0.2s ease, transform 0.15s ease;
+  transition: color 0.2s ease, transform 0.15s ease, filter 0.2s ease;
 }
 
 /* Tooltip text */
@@ -203,11 +203,15 @@
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
+/* Light mode hover */
 .project-actions a:hover {
-  color: var(--primary);
-  transform: translateY(-2px);
+  color: #111; /* near black, softer than pure black */
 }
 
+/* Dark mode hover */
+[data-theme="dark"] .project-actions a:hover {
+  color: #fff;
+}
 /* Description */
 
 .project-description {
