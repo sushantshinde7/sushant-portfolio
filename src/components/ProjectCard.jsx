@@ -8,7 +8,7 @@ function ProjectCard({
   tags,
   github,
   live,
-  reverse = false
+  reverse = false,
 }) {
   return (
     <article className={`project-card ${reverse ? "reverse" : ""}`}>
@@ -23,10 +23,23 @@ function ProjectCard({
           <h3 className="project-title">{title}</h3>
 
           <div className="project-actions">
-            <a href={github} target="_blank" rel="noreferrer" aria-label="GitHub">
+            <a
+              href={github}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              data-tooltip="View Code"
+            >
               <Github size={18} />
             </a>
-            <a href={live} target="_blank" rel="noreferrer" aria-label="Live Demo">
+
+            <a
+              href={live}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Live Demo"
+              data-tooltip="Live Demo"
+            >
               <Globe size={18} />
             </a>
           </div>

@@ -155,12 +155,54 @@
   transition: color 0.2s ease, transform 0.15s ease;
 }
 
+/* Tooltip text */
+.project-actions a::before {
+  content: attr(data-tooltip);
+  position: absolute;
+
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+
+  font-size: 0.7rem;
+  padding: 0.3rem 0.5rem;
+
+  background: var(--card-bg);
+  color: var(--text);
+
+  border: 1px solid var(--border);
+  border-radius: 6px;
+
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+
+  transition: all 0.18s ease;
+}
+
+/* Tooltip arrow */
 .project-actions a::after {
   content: "";
   position: absolute;
-  inset: -6px;
+
+  bottom: 115%;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--border) transparent transparent transparent;
+
+  opacity: 0;
+  transition: all 0.18s ease;
 }
 
+/* Show on hover */
+.project-actions a:hover::before,
+.project-actions a:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
 .project-actions a:hover {
   color: var(--primary);
   transform: translateY(-2px);
