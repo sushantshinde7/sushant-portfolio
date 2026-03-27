@@ -206,12 +206,21 @@
 /* Light mode hover */
 .project-actions a:hover {
   color: #111; /* near black, softer than pure black */
+  transform: translateY(-2px);
 }
 
 /* Dark mode hover */
 [data-theme="dark"] .project-actions a:hover {
   color: #fff;
+  transform: translateY(-2px);
 }
+
+/* Click / Press */
+.project-actions a:active {
+  transform: translateY(0) scale(0.92);
+  transition-duration: 0.05s;
+}
+
 /* Description */
 
 .project-description {
