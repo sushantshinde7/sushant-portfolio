@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function GoToTop({ footerRef }) {
   const [visible, setVisible] = useState(false);
   const [atBottom, setAtBottom] = useState(false);
+
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -11,18 +13,30 @@ export default function GoToTop({ footerRef }) {
 
       const scrolledEnough = scrollY > viewport * 0.8;
 
-      let nearFooter = false;
+      // 🔽 detect scroll direction
+      const scrollingUp = scrollY < lastScrollY.current;
 
+      // 🔽 footer detection
+      let nearFooter = false;
       if (footerRef?.current) {
         const footerTop =
           footerRef.current.getBoundingClientRect().top;
 
-        // 👇 precise trigger (when footer enters viewport)
         nearFooter = footerTop <= viewport - 20;
       }
 
       setAtBottom(nearFooter);
-      setVisible(scrolledEnough || nearFooter);
+
+      // 🔥 visibility logic
+      if (nearFooter) {
+        setVisible(true); // always show near footer
+      } else if (scrolledEnough && scrollingUp) {
+        setVisible(true); // show when scrolling up
+      } else {
+        setVisible(false); // hide when scrolling down
+      }
+
+      lastScrollY.current = scrollY;
     };
 
     window.addEventListener("scroll", handleScroll);

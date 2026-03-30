@@ -371,7 +371,7 @@ svg {
   opacity: 0;
   transform: translateY(10px) scale(0.95);
   pointer-events: none;
-
+  will-change: transform, opacity;
   transition: all 0.25s ease;
 }
 
