@@ -1,11 +1,12 @@
+import React from "react";
 import { Github, Linkedin, Heart } from "lucide-react";
 import "../styles/Footer.css";
 
-function Footer() {
+const Footer = React.forwardRef((props, ref) => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="footer">
+    <footer ref={ref} className="footer">
       <div className="footer-inner">
         {/* Left */}
         <div className="footer-left">
@@ -30,6 +31,7 @@ function Footer() {
               </span>
             </span>
           </p>
+
           <p className="footer-copy">
             © {year} Sushant Shinde. All rights reserved.
           </p>
@@ -58,6 +60,6 @@ function Footer() {
       </div>
     </footer>
   );
-}
+});
 
 export default Footer;

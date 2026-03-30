@@ -1,3 +1,5 @@
+import { useRef } from "react";
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -7,11 +9,13 @@ import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import GoToTop from "./components/GoToTop";
 
-
 function App() {
+  const footerRef = useRef(null); // 👈 REQUIRED
+
   return (
     <div className="app-shell">
       <Navbar />
+
       <div className="content-container">
         <div className="main-content">
           <Hero />
@@ -20,12 +24,15 @@ function App() {
           <Projects />
           <Contact />
         </div>
-        <GoToTop />
+
+        {/* 👇 pass ref here */}
+        <GoToTop footerRef={footerRef} />
       </div>
-      <Footer />
+
+      {/* 👇 attach ref here */}
+      <Footer ref={footerRef} />
     </div>
   );
 }
-
 
 export default App;

@@ -345,7 +345,7 @@ svg {
   position: fixed;
 
   /* Align with content container edges */
-  right: calc(5vw + 24px);
+  right: calc(5vw + 3px);
   bottom: 28px;
 
   width: 44px;
@@ -391,6 +391,10 @@ svg {
   transform: translateY(-3px) scale(1.05);
 }
 
+/* 👇 KEY PART (footer avoidance) */
+.goTopBtn.lifted {
+  bottom: 90px;
+}
 
 /* Desktop spacing */
 @media (min-width: 1024px) {
