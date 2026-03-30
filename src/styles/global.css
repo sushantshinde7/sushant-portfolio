@@ -396,6 +396,21 @@ svg {
   bottom: 90px;
 }
 
+
+.goTopBtn svg path {
+  stroke: var(--text-muted);
+  transition: stroke 0.2s ease;
+}
+
+/* when visible → stronger identity */
+.goTopBtn.visible svg path {
+  stroke: var(--text);
+}
+
+/* hover polish */
+.goTopBtn:hover svg path {
+  stroke: var(--primary);
+}
 /* Desktop spacing */
 @media (min-width: 1024px) {
   .content-container {
