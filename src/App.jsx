@@ -5,6 +5,8 @@ import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
+import GoToTop from "./components/GoToTop";
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
           <Projects />
           <Contact />
         </div>
+        <GoToTop />
       </div>
       <Footer />
     </div>
