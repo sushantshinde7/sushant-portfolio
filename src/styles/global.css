@@ -411,6 +411,7 @@ svg {
 .goTopBtn:hover svg path {
   stroke: var(--primary);
 }
+
 /* Desktop spacing */
 @media (min-width: 1024px) {
   .content-container {
