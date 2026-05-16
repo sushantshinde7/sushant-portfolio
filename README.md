@@ -20,7 +20,7 @@ Crafted with emphasis on **component architecture, motion design, responsive lay
 - Skills & Tech Stack
 - Featured Projects Showcase
 - Contact Section
-- Social / Resume Links
+- Social / Resume Link
 
 ### UI / UX Enhancements
 - Smooth micro-interactions and motion transitions
