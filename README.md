@@ -22,6 +22,12 @@ Crafted with emphasis on **component architecture, motion design, responsive lay
 - Contact Section
 - Social / Resume Link
 
+### projects included:
+- Finsights
+- js interview prep platform
+- react productivity hub
+- pwa task app
+
 ### UI / UX Enhancements
 - Smooth micro-interactions and motion transitions
 - Scroll-based animations using Framer Motion
